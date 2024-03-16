@@ -1,5 +1,4 @@
 class CountryModel {
-
   final String path;
   final String style;
   final String color;
@@ -11,4 +10,11 @@ class CountryModel {
     required this.path,
     required this.style,
   });
+
+  static CountryModel empty() => CountryModel(
+        color: "",
+        name: "",
+        path: "",
+        style: "",
+      );
 }

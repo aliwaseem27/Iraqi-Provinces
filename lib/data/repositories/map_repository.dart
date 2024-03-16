@@ -1,10 +1,10 @@
-import 'package:Iraq/features/map/models/country.dart';
+import 'package:Iraq/features/map/models/country_model.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:xml/xml.dart';
 
-class MapLoader extends GetxController {
-  static MapLoader get instance => Get.find();
+class MapRepository extends GetxController {
+  static MapRepository get instance => Get.find();
 
    Future<List<CountryModel>> loadSvgImage({required String svgImage}) async {
     List<CountryModel> maps = [];
