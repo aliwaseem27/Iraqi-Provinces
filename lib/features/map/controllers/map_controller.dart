@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../../../utils/constants/image_strings.dart';
 import '../models/country_model.dart';
 import '../screens/widgets/country_clipper.dart';
+import '../screens/widgets/country_painter.dart';
 
 class MapController extends GetxController {
   static MapController get instance => Get.find();
@@ -27,12 +28,20 @@ class MapController extends GetxController {
     required CountryClipper clipper,
     required Color color,
   }) {
-    return ClipPath(
-      clipper: clipper,
-      child: CountryWidget(
-        onTap: () => updateCountry(country),
-        color: color,
-      ),
+    return Stack(
+      children: [
+        CustomPaint(
+          painter: BorderPainter(svgPath: country.path),
+          child: Text(country.name),
+        ),
+        ClipPath(
+          clipper: clipper,
+          child: CountryWidget(
+            onTap: () => updateCountry(country),
+            color: color,
+          ),
+        ),
+      ],
     );
   }
 }

@@ -15,10 +15,7 @@ class CountryWidget extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.red, width: 5),
-          color: color,
-        ),
+        color: color,
       ),
     );
   }

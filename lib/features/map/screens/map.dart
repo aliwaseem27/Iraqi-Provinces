@@ -13,42 +13,44 @@ class MapScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(MapController());
     return Scaffold(
-      body: Container(
-        decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 5)),
-        width: 500,
-        height: 500,
-        child: Center(
-          child: FutureBuilder<List<CountryModel>>(
-            future: controller.loadMap(),
-            builder: (context, snapshot) {
-              if (snapshot.connectionState == ConnectionState.waiting) {
-                return Container();
-              } else if (snapshot.hasError) {
-                return Text('Error: ${snapshot.error}');
-              } else {
-                return InteractiveViewer(
-                  maxScale: 3,
-                  minScale: 0.1,
-                  child: Obx(
-                    () => Stack(
-                      children: [
-                        for (var country in snapshot.data!)
-                          controller.buildCountry(
-                            country: country,
-                            clipper: CountryClipper(svgPath: country.path),
-                            color: Color(int.parse("FF${country.color}", radix: 16))
-                                .withOpacity(controller.pressedCountry.value.name == ""
-                                    ? 1.0
-                                    : controller.pressedCountry.value.name == country.name
-                                        ? 1.0
-                                        : 0.4),
-                          )
-                      ],
+      body: FittedBox(
+        child: Container(
+          decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 5)),
+          width: 500,
+          height: 500,
+          child: Center(
+            child: FutureBuilder<List<CountryModel>>(
+              future: controller.loadMap(),
+              builder: (context, snapshot) {
+                if (snapshot.connectionState == ConnectionState.waiting) {
+                  return Container();
+                } else if (snapshot.hasError) {
+                  return Text('Error: ${snapshot.error}');
+                } else {
+                  return InteractiveViewer(
+                    maxScale: 3,
+                    minScale: 0.1,
+                    child: Obx(
+                      () => Stack(
+                        children: [
+                          for (var country in snapshot.data!)
+                            controller.buildCountry(
+                              country: country,
+                              clipper: CountryClipper(svgPath: country.path),
+                              color: Color(int.parse("FF${country.color}", radix: 16))
+                                  .withOpacity(controller.pressedCountry.value.name == ""
+                                      ? 1.0
+                                      : controller.pressedCountry.value.name == country.name
+                                          ? 1.0
+                                          : 0.4),
+                            )
+                        ],
+                      ),
                     ),
-                  ),
-                );
-              }
-            },
+                  );
+                }
+              },
+            ),
           ),
         ),
       ),
