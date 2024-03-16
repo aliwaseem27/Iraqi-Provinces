@@ -25,17 +25,15 @@ class MapController extends GetxController {
 
   Widget buildCountry({
     required CountryModel country,
-    required CountryClipper clipper,
     required Color color,
   }) {
     return Stack(
       children: [
         CustomPaint(
           painter: BorderPainter(svgPath: country.path),
-          child: Text(country.name),
         ),
         ClipPath(
-          clipper: clipper,
+          clipper: CountryClipper(svgPath: country.path),
           child: CountryWidget(
             onTap: () => updateCountry(country),
             color: color,
