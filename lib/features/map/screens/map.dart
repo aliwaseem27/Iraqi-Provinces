@@ -15,17 +15,18 @@ class MapScreen extends StatelessWidget {
     return ClipPath(
       clipper: clipper,
       child: Container(
-        color: Colors.red,
+        color: Colors.teal,
       ),
     );
   }
 
   @override
   Widget build(BuildContext context) {
+    final loader = Get.put(MapLoader());
     return Scaffold(
       body: Center(
         child: FutureBuilder<List<CountryModel>>(
-          future: MapLoader.loadSvgImage(svgImage: MImages.iraqMapInlineStyling),
+          future: loader.loadSvgImage(svgImage: MImages.iraqMapInlineStyling),
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
               return const CircularProgressIndicator();
@@ -37,7 +38,7 @@ class MapScreen extends StatelessWidget {
                   for (var country in snapshot.data!)
                     _getClippedImage(
                       country: country,
-                      clipper: CountryClipper(svgPath: country.d),
+                      clipper: CountryClipper(svgPath: country.path),
                     )
                 ],
               );

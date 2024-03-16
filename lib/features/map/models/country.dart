@@ -1,17 +1,14 @@
 class CountryModel {
-  // final String id;
-  // final String path;
-  // final String color;
-  // final String name;
 
-  // CountryModel({
-  //   required this.id,
-  //   required this.path,
-  //   required this.color,
-  //   required this.name,
-  // });
-  final String d;
+  final String path;
   final String style;
+  final String color;
+  final String name;
 
-  CountryModel({required this.d, required this.style});
+  CountryModel({
+    required this.color,
+    required this.name,
+    required this.path,
+    required this.style,
+  });
 }

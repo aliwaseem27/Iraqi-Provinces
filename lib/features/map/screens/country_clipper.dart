@@ -13,14 +13,14 @@ class CountryClipper extends CustomClipper<Path> {
   @override
   Path getClip(Size size) {
     var path = parseSvgPathData(svgPath);
-    // final Matrix4 matrix4 = Matrix4.identity();
-    //
-    //
-    // matrix4.scale(1.1, 1.1);
-    //
-    //
-    // return path.transform(matrix4.storage);
-    return path;
+    final Matrix4 matrix4 = Matrix4.identity();
+
+
+    matrix4.scale(1.0, 1.0);
+
+
+    return path.transform(matrix4.storage).shift(const Offset(200, 20));
+    // return path;
   }
 
 

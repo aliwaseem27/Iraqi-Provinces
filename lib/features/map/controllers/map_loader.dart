@@ -3,8 +3,10 @@ import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 import 'package:xml/xml.dart';
 
-class MapLoader {
-  static Future<List<CountryModel>> loadSvgImage({required String svgImage}) async {
+class MapLoader extends GetxController {
+  static MapLoader get instance => Get.find();
+
+   Future<List<CountryModel>> loadSvgImage({required String svgImage}) async {
     List<CountryModel> maps = [];
 
     String generalString = await rootBundle.loadString(svgImage);
@@ -16,8 +18,10 @@ class MapLoader {
     for (var element in paths) {
       String partD = element.getAttribute("d").toString();
       String partStyle = element.getAttribute("style").toString();
+      String partColor = element.getAttribute("color").toString();
+      String partName = element.getAttribute("name").toString();
 
-      maps.add(CountryModel(d: partD, style: partStyle));
+      maps.add(CountryModel(path: partD, style: partStyle, color: partColor, name: partName));
     }
 
     return maps;
