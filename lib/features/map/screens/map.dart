@@ -1,6 +1,8 @@
 import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/features/map/models/country_model.dart';
+import 'package:Iraq/features/map/screens/widgets/map_widget.dart';
 import 'package:Iraq/features/map/screens/widgets/on_hover_button.dart';
+import 'package:Iraq/utils/helpers/helper_functions.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -34,14 +36,13 @@ class MapScreen extends StatelessWidget {
                           () => Stack(
                             children: [
                               for (var country in snapshot.data!)
-                                controller.buildCountry(
+                                MapWidget(
                                   country: country,
-                                  color: Color(int.parse("FF${country.color}", radix: 16))
-                                      .withOpacity(controller.pressedCountry.value.name == ""
-                                          ? 1.0
-                                          : controller.pressedCountry.value.name == country.name
-                                              ? 1.0
-                                              : 0.4),
+                                  color: controller.pressedCountry.value.name == ""
+                                      ? MHelperFunctions.colorFromRGB(country.color)
+                                      : controller.pressedCountry.value.name == country.name
+                                          ? MHelperFunctions.increaseSaturation(country.color,increaseBy: 1)
+                                          : MHelperFunctions.colorFromRGB(country.color).withAlpha(30),
                                 )
                             ],
                           ),
