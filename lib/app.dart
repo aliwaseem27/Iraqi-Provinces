@@ -10,7 +10,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return GetMaterialApp(
       title: "School Project",
-      home: MainMenu(),
+      home: MainMenuScreen(),
     );
   }
 }
