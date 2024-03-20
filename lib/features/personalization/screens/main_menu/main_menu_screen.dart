@@ -1,8 +1,10 @@
+import 'package:Iraq/features/personalization/screens/learning/LearningScreen.dart';
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 
 class MainMenuScreen extends StatelessWidget {
   const MainMenuScreen({super.key});
@@ -35,7 +37,7 @@ class MainMenuScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    ElevatedButton(onPressed: () {}, child: Text("Start Learning")),
+                    ElevatedButton(onPressed: () => Get.to(()=> const LearningScreen()), child: Text("Start Learning")),
                     SizedBox(height: MSizes.spaceBetweenSections),
                     ElevatedButton(onPressed: () {}, child: Text("Explore Maps")),
                     SizedBox(height: MSizes.spaceBetweenSections),
