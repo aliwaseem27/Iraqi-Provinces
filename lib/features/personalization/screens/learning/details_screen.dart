@@ -1,5 +1,7 @@
+import 'package:Iraq/features/personalization/screens/learning/historical_info_screen.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import '../../../map/screens/map.dart';
 
@@ -11,7 +13,7 @@ class DetailsScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(),
       body: Container(
-        padding: EdgeInsets.all(MSizes.defaultSize),
+        padding: const EdgeInsets.all(MSizes.defaultSize),
         child: Row(
           children: [
             Expanded(
@@ -54,7 +56,7 @@ class DetailsScreen extends StatelessWidget {
 
                 // MoreDetails Button
                 const SizedBox(height: MSizes.spaceBetweenSections),
-                ElevatedButton(onPressed: () {}, child: Text("More Detailed Historical Info")),
+                ElevatedButton(onPressed: () => Get.to(()=> const HistoricalInfoScreen()), child: Text("More Detailed Historical Info")),
               ],
             ))
           ],
