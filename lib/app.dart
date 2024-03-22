@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:Iraq/features/map/screens/map.dart';
 import 'package:Iraq/features/personalization/screens/main_menu/main_menu_screen.dart';
 import 'package:flutter/material.dart';
@@ -11,6 +13,15 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       title: "School Project",
       home: MainMenuScreen(),
+      scrollBehavior: CustomScrollBehavior(),
     );
   }
+}
+
+class CustomScrollBehavior extends MaterialScrollBehavior {
+  @override
+  Set<PointerDeviceKind> get dragDevices => {
+    PointerDeviceKind.touch,
+    PointerDeviceKind.mouse,
+  };
 }

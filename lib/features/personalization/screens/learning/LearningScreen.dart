@@ -12,7 +12,9 @@ class LearningScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        title: Text("Iraqi Provinces"),
+      ),
       body: Container(
         padding: EdgeInsets.all(MSizes.defaultSize),
         child: Row(
