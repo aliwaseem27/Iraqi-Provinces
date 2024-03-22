@@ -26,7 +26,7 @@ class _OnHoverButtonState extends State<OnHoverButton> {
     );
   }
 
-  void onEntered( bool isHovered){
+  void onEntered(bool isHovered){
     setState(() {
       this.isHovered = isHovered;
     });

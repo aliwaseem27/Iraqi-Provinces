@@ -1,5 +1,6 @@
 import 'package:Iraq/features/infographic/screens/explore_screen.dart';
 import 'package:Iraq/features/map/screens/widgets/on_hover_button.dart';
+import 'package:Iraq/features/personalization/screens/about_us/about_us.dart';
 import 'package:Iraq/features/personalization/screens/learning/LearningScreen.dart';
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
@@ -40,13 +41,15 @@ class MainMenuScreen extends StatelessWidget {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    OnHoverButton(child: ElevatedButton(onPressed: () => Get.to(()=> const LearningScreen()), child: Text("Start Learning"))),
+                    OnHoverButton(
+                        child: ElevatedButton(
+                            onPressed: () => Get.to(() => const LearningScreen()), child: Text("Start Learning"))),
                     SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () => Get.to(()=> const ExploreScreen()), child: Text("Explore Maps")),
+                    ElevatedButton(onPressed: () => Get.to(() => const ExploreScreen()), child: Text("Explore Maps")),
                     SizedBox(height: MSizes.spaceBetweenSections),
                     ElevatedButton(onPressed: () {}, child: Text("Challenge yourself")),
                     SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () {}, child: Text("About us")),
+                    ElevatedButton(onPressed: () => Get.to(() => const AboutUsScreen()), child: Text("About us")),
                     SizedBox(height: MSizes.spaceBetweenSections),
                   ],
                 ),
