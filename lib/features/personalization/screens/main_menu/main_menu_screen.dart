@@ -1,3 +1,4 @@
+import 'package:Iraq/features/exam/screens/questions/questions.dart';
 import 'package:Iraq/features/infographic/screens/explore_screen.dart';
 import 'package:Iraq/features/map/screens/widgets/on_hover_button.dart';
 import 'package:Iraq/features/personalization/screens/about_us/about_us.dart';
@@ -47,7 +48,7 @@ class MainMenuScreen extends StatelessWidget {
                     SizedBox(height: MSizes.spaceBetweenSections),
                     ElevatedButton(onPressed: () => Get.to(() => const ExploreScreen()), child: Text("Explore Maps")),
                     SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () {}, child: Text("Challenge yourself")),
+                    ElevatedButton(onPressed: () => Get.to(()=> const QuestionsScreen()), child: Text("Challenge yourself")),
                     SizedBox(height: MSizes.spaceBetweenSections),
                     ElevatedButton(onPressed: () => Get.to(() => const AboutUsScreen()), child: Text("About us")),
                     SizedBox(height: MSizes.spaceBetweenSections),
