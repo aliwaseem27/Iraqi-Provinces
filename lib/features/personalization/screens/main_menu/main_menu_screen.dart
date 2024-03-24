@@ -11,11 +11,14 @@ import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../../map/controllers/map_controller.dart';
+
 class MainMenuScreen extends StatelessWidget {
   const MainMenuScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(MapController());
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),

@@ -11,7 +11,7 @@ class InteractiveMap extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(MapController());
+    final controller = MapController.instance;
     return FittedBox(
         child: Container(
           decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 5)),

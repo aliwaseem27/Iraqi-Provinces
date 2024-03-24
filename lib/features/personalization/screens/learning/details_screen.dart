@@ -1,3 +1,4 @@
+import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/features/personalization/screens/learning/historical_info_screen.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -10,9 +11,10 @@ class DetailsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = MapController.instance;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Name of Province"),
+        title: Obx(() => Text(controller.pressedCountry.value.name)),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
@@ -58,7 +60,9 @@ class DetailsScreen extends StatelessWidget {
 
                 // MoreDetails Button
                 const SizedBox(height: MSizes.spaceBetweenSections),
-                ElevatedButton(onPressed: () => Get.to(()=> const HistoricalInfoScreen()), child: Text("More Detailed Historical Info")),
+                ElevatedButton(
+                    onPressed: () => Get.to(() => const HistoricalInfoScreen()),
+                    child: Text("More Detailed Historical Info")),
               ],
             ))
           ],

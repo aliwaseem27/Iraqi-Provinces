@@ -1,5 +1,6 @@
 import 'package:Iraq/features/map/screens/map.dart';
 import 'package:Iraq/features/personalization/screens/learning/details_screen.dart';
+import 'package:Iraq/utils/constants/enums.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -25,7 +26,13 @@ class LearningScreen extends StatelessWidget {
               flex: 1,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                children: [for (int i = 0; i < 9; i++) ElevatedButton(onPressed: () => Get.to(()=> const DetailsScreen()), child: Text("Province"))],
+                children: [
+                  for (int i = 0; i < Province.values.length/2; i++)
+                    ElevatedButton(
+                      onPressed: () => Get.to(() => const DetailsScreen()),
+                      child: Text(Province.values[i].name),
+                    ),
+                ],
               ),
             ),
             Expanded(
@@ -37,7 +44,11 @@ class LearningScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (int i = 0; i < 9; i++) ElevatedButton(onPressed: () {}, child: Text("Province")),
+                  for (int i = Province.values.length~/2; i < Province.values.length; i++)
+                    ElevatedButton(
+                      onPressed: () => Get.to(() => const DetailsScreen()),
+                      child: Text(Province.values[i].name),
+                    ),
                 ],
               ),
             ),
