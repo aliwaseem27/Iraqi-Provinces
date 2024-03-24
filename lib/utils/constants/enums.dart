@@ -1,62 +1,111 @@
+import 'package:flutter/material.dart';
+
 enum Province {
+
+  empty (
+    title: "",
+  ),
   baghdad(
-    name: "Baghdad",
+    title: "Baghdad",
   ),
   duhok(
-    name: "Duhok",
+    title: "Duhok",
   ),
   erbil(
-    name: "Erbil",
+    title: "Erbil",
   ),
   basra(
-    name: "Basra",
+    title: "Basra",
   ),
   muthanna(
-    name: "Muthanna",
+    title: "Muthanna",
   ),
   sulaymaniyah(
-    name: "Sulaymaniyah",
+    title: "Sulaymaniyah",
   ),
   diyala(
-    name: "Diyala",
+    title: "Diyala",
   ),
   wasit(
-    name: "Wasit",
+    title: "Wasit",
   ),
   maysan(
-    name: "Maysan",
+    title: "Maysan",
   ),
   alAnbar(
-    name: "Al-Anbar",
+    title: "Al-Anbar",
   ),
   najaf(
-    name: "Najaf",
+    title: "Najaf",
   ),
   ninawa(
-    name: "Ninawa",
+    title: "Ninawa",
   ),
   salahAlDin(
-    name: "Salah Al-Din",
+    title: "Salah Al-Din",
   ),
   kirkuk(
-    name: "Kirkuk",
+    title: "Kirkuk",
   ),
   babil(
-    name: "Babil",
+    title: "Babil",
   ),
   alQadisiyyah(
-    name: "Al-Qadisiyyah",
+    title: "Al-Qadisiyyah",
   ),
   dhiQar(
-    name: "Dhi Qar",
+    title: "Dhi Qar",
   ),
   karbala(
-    name: "Karbala",
+    title: "Karbala",
   );
 
-  final String name;
+  final String title;
 
   const Province({
-    required this.name,
+    required this.title,
   });
+
+  factory Province.fromString(String countryName){
+    switch(countryName){
+      case "Baghdad":
+        return Province.baghdad;
+      case "Duhok":
+        return Province.duhok;
+      case "Erbil":
+        return Province.erbil;
+      case "Basra":
+        return Province.basra;
+      case "Muthanna":
+        return Province.muthanna;
+      case "Sulaymaniyah":
+        return Province.sulaymaniyah;
+      case "Diyala":
+        return Province.diyala;
+      case "Wasit":
+        return Province.wasit;
+      case "Maysan":
+        return Province.maysan;
+      case "Al-Anbar":
+        return Province.alAnbar;
+      case "Najaf":
+        return Province.najaf;
+      case "Ninawa":
+        return Province.ninawa;
+      case "Salah Al-Din":
+        return Province.salahAlDin;
+      case "Kirkuk":
+        return Province.kirkuk;
+      case "Babil":
+        return Province.babil;
+      case "Al-Qadisiyyah":
+        return Province.alQadisiyyah;
+      case "Dhi Qar":
+        return Province.dhiQar;
+      case "Karbala":
+        return Province.karbala;
+      default:
+        return Province.empty;
+    }
+  }
 }

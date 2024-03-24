@@ -3,18 +3,20 @@ import 'package:Iraq/features/personalization/screens/learning/historical_info_s
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
 
 import '../../../map/screens/map.dart';
 
 class DetailsScreen extends StatelessWidget {
   const DetailsScreen({super.key});
 
+
   @override
   Widget build(BuildContext context) {
     final controller = MapController.instance;
     return Scaffold(
       appBar: AppBar(
-        title: Obx(() => Text(controller.pressedCountry.value.name)),
+        title: Obx(() => Text(controller.selectedProvince.value.title)),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
@@ -30,7 +32,10 @@ class DetailsScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 // Title
-                Text("Baghdad", style: Theme.of(context).textTheme.displayLarge),
+                Obx(() => Text(
+                      controller.selectedProvince.value.title,
+                      style: Theme.of(context).textTheme.displayLarge,
+                    )),
                 const SizedBox(height: MSizes.spaceBetweenSections),
 
                 // Common Info

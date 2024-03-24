@@ -7,11 +7,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
+import '../../../map/controllers/map_controller.dart';
+
 class LearningScreen extends StatelessWidget {
   const LearningScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final controller = MapController.instance;
     return Scaffold(
       appBar: AppBar(
         title: Text("Iraqi Provinces"),
@@ -27,10 +30,13 @@ class LearningScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (int i = 0; i < Province.values.length/2; i++)
+                  for (int i = 1; i < Province.values.length/2; i++)
                     ElevatedButton(
-                      onPressed: () => Get.to(() => const DetailsScreen()),
-                      child: Text(Province.values[i].name),
+                      onPressed: () {
+                        controller.updateProvinceByButton(Province.values[i]);
+                        Get.to(() => const DetailsScreen());
+                      },
+                      child: Text(Province.values[i].title),
                     ),
                 ],
               ),
@@ -47,7 +53,7 @@ class LearningScreen extends StatelessWidget {
                   for (int i = Province.values.length~/2; i < Province.values.length; i++)
                     ElevatedButton(
                       onPressed: () => Get.to(() => const DetailsScreen()),
-                      child: Text(Province.values[i].name),
+                      child: Text(Province.values[i].title),
                     ),
                 ],
               ),
