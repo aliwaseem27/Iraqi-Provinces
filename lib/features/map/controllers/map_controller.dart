@@ -13,6 +13,15 @@ class MapController extends GetxController {
 
   final pressedCountry = CountryModel.empty().obs;
   final selectedProvince = Province.empty.obs;
+  final List<CountryModel> countries = <CountryModel>[].obs;
+
+  @override
+  void onInit() {
+    super.onInit();
+    loadMap().then((loadedCountries) {
+      countries.assignAll(loadedCountries);
+    });
+  }
 
   Future<List<CountryModel>> loadMap() async {
     return await mapRepository.loadSvgImage(svgImage: MImages.iraqMapInlineStyling);
@@ -29,5 +38,7 @@ class MapController extends GetxController {
 
   Future<void> updateProvinceByButton(Province province) async {
     selectedProvince.value = province;
+    final country = countries.firstWhere((countryModel) => countryModel.name == province.title);
+    updateCountry(country);
   }
 }
