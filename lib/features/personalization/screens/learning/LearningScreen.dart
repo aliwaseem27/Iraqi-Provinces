@@ -52,7 +52,10 @@ class LearningScreen extends StatelessWidget {
                 children: [
                   for (int i = Province.values.length~/2; i < Province.values.length; i++)
                     ElevatedButton(
-                      onPressed: () => Get.to(() => const DetailsScreen()),
+                      onPressed: () {
+                        controller.updateProvinceByButton(Province.values[i]);
+                        Get.to(() => const DetailsScreen());
+                      },
                       child: Text(Province.values[i].title),
                     ),
                 ],
