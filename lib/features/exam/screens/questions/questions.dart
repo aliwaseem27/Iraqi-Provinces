@@ -43,13 +43,13 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                       minHeight: 12,
                       borderRadius: BorderRadius.circular(12),
                     ),
-                    SizedBox(height: MSizes.spaceBetweenSections * 2),
+                    const SizedBox(height: MSizes.spaceBetweenSections * 2),
                   ],
                 ),
 
                 // Question Title
                 Text("Q/ Which province is the most producer of oil?", style: Theme.of(context).textTheme.displaySmall),
-                SizedBox(height: MSizes.spaceBetweenSections * 2),
+                const SizedBox(height: MSizes.spaceBetweenSections * 2),
               ],
             ),
 
@@ -103,7 +103,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                   children: [
                     ElevatedButton(
                       onPressed: () => Get.to(() => const ResultsScreen()),
-                      child: Text("Next Question"),
+                      child: const Text("Next Question"),
                     ),
                   ],
                 ),

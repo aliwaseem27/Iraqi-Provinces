@@ -32,6 +32,6 @@ class MapWidget extends StatelessWidget {
           ),
         ),
       ],
-    );;
+    );
   }
 }

@@ -8,7 +8,7 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("About Us"),
+        title: const Text("About Us"),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),

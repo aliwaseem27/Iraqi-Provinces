@@ -5,9 +5,7 @@ import 'package:Iraq/features/personalization/screens/about_us/about_us.dart';
 import 'package:Iraq/features/personalization/screens/learning/LearningScreen.dart';
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -47,25 +45,25 @@ class MainMenuScreen extends StatelessWidget {
                   children: [
                     OnHoverButton(
                         child: ElevatedButton(
-                            onPressed: () => Get.to(() => const LearningScreen()), child: Text("Start Learning"))),
-                    SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () => Get.to(() => const ExploreScreen()), child: Text("Explore Maps")),
-                    SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () => Get.to(()=> const QuestionsScreen()), child: Text("Challenge yourself")),
-                    SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () => Get.to(() => const AboutUsScreen()), child: Text("About us")),
-                    SizedBox(height: MSizes.spaceBetweenSections),
+                            onPressed: () => Get.to(() => const LearningScreen()), child: const Text("Start Learning"))),
+                    const SizedBox(height: MSizes.spaceBetweenSections),
+                    ElevatedButton(onPressed: () => Get.to(() => const ExploreScreen()), child: const Text("Explore Maps")),
+                    const SizedBox(height: MSizes.spaceBetweenSections),
+                    ElevatedButton(onPressed: () => Get.to(()=> const QuestionsScreen()), child: const Text("Challenge yourself")),
+                    const SizedBox(height: MSizes.spaceBetweenSections),
+                    ElevatedButton(onPressed: () => Get.to(() => const AboutUsScreen()), child: const Text("About us")),
+                    const SizedBox(height: MSizes.spaceBetweenSections),
                   ],
                 ),
 
                 Column(
                   children: [
-                    Text("Choose a language:"),
+                    const Text("Choose a language:"),
                     Row(
                       children: [
-                        ElevatedButton(onPressed: () {}, child: Text("English")),
-                        SizedBox(width: MSizes.spaceBetweenSections),
-                        ElevatedButton(onPressed: () {}, child: Text("العربية")),
+                        ElevatedButton(onPressed: () {}, child: const Text("English")),
+                        const SizedBox(width: MSizes.spaceBetweenSections),
+                        ElevatedButton(onPressed: () {}, child: const Text("العربية")),
                       ],
                     )
                   ],

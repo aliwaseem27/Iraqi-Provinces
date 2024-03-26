@@ -2,9 +2,7 @@ import 'package:Iraq/features/map/screens/map.dart';
 import 'package:Iraq/features/personalization/screens/learning/details_screen.dart';
 import 'package:Iraq/utils/constants/enums.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 import '../../../map/controllers/map_controller.dart';
@@ -17,10 +15,10 @@ class LearningScreen extends StatelessWidget {
     final controller = MapController.instance;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Iraqi Provinces"),
+        title: const Text("Iraqi Provinces"),
       ),
       body: Container(
-        padding: EdgeInsets.all(MSizes.defaultSize),
+        padding: const EdgeInsets.all(MSizes.defaultSize),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
@@ -41,7 +39,7 @@ class LearningScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Expanded(
+            const Expanded(
               flex: 3,
               child: InteractiveMap(),
             ),

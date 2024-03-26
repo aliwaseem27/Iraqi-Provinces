@@ -7,7 +7,7 @@ void main() {
   runApp(const MyApp());
   doWhenWindowReady(() {
     final win = appWindow;
-    win.minSize = Size(900, 700);
+    win.minSize = const Size(900, 700);
     win.alignment = Alignment.center;
     appWindow.title = "School Project";
   });

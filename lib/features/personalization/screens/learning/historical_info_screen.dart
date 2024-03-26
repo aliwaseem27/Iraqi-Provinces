@@ -1,9 +1,7 @@
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:Iraq/utils/constants/text_strings.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 class HistoricalInfoScreen extends StatelessWidget {
   const HistoricalInfoScreen({super.key});
@@ -12,7 +10,7 @@ class HistoricalInfoScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Historical Info about (Name)"),
+        title: const Text("Historical Info about (Name)"),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -23,13 +21,13 @@ class HistoricalInfoScreen extends StatelessWidget {
                 child: Column(
                   children: [
                     Text("Baghdad", style: Theme.of(context).textTheme.displayMedium),
-                    SizedBox(
+                    const SizedBox(
                       child: Text(MTexts.paragraph),
                     ),
                   ],
                 ),
               ),
-              SizedBox(width: MSizes.spaceBetweenSections),
+              const SizedBox(width: MSizes.spaceBetweenSections),
               Expanded(
                 child: Column(
                   children: [

@@ -10,7 +10,7 @@ class ResultsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Your Results"),
+        title: const Text("Your Results"),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
@@ -21,7 +21,7 @@ class ResultsScreen extends StatelessWidget {
             Column(
               children: [
                 Text("Your Score", style: Theme.of(context).textTheme.displayLarge),
-                SizedBox(height: MSizes.spaceBetweenSections),
+                const SizedBox(height: MSizes.spaceBetweenSections),
                 CircleAvatar(
                   radius: 64,
                   backgroundColor: Colors.teal,
@@ -31,7 +31,7 @@ class ResultsScreen extends StatelessWidget {
             ),
 
             // Incorrect Questions
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Column(
