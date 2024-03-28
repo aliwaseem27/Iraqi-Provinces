@@ -3,6 +3,7 @@ import 'package:Iraq/features/infographic/screens/explore_screen.dart';
 import 'package:Iraq/features/map/screens/widgets/on_hover_button.dart';
 import 'package:Iraq/features/personalization/screens/about_us/about_us.dart';
 import 'package:Iraq/features/personalization/screens/learning/LearningScreen.dart';
+import 'package:Iraq/localization/language_controller.dart';
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -17,6 +18,7 @@ class MainMenuScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final controller = Get.put(MapController());
+    final languageController = LanguageController.instance;
     return Scaffold(
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
@@ -45,7 +47,7 @@ class MainMenuScreen extends StatelessWidget {
                   children: [
                     OnHoverButton(
                         child: ElevatedButton(
-                            onPressed: () => Get.to(() => const LearningScreen()), child: const Text("Start Learning"))),
+                            onPressed: () => Get.to(() => const LearningScreen()), child: Text("startLearning".tr))),
                     const SizedBox(height: MSizes.spaceBetweenSections),
                     ElevatedButton(onPressed: () => Get.to(() => const ExploreScreen()), child: const Text("Explore Maps")),
                     const SizedBox(height: MSizes.spaceBetweenSections),
@@ -61,9 +63,9 @@ class MainMenuScreen extends StatelessWidget {
                     const Text("Choose a language:"),
                     Row(
                       children: [
-                        ElevatedButton(onPressed: () {}, child: const Text("English")),
+                        ElevatedButton(onPressed: () => languageController.chooseEnglish(), child: const Text("English")),
                         const SizedBox(width: MSizes.spaceBetweenSections),
-                        ElevatedButton(onPressed: () {}, child: const Text("العربية")),
+                        ElevatedButton(onPressed: () => languageController.chooseArabic(), child: const Text("العربية")),
                       ],
                     )
                   ],

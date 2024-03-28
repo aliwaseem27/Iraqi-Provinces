@@ -1,6 +1,8 @@
 import 'dart:ui';
 
 import 'package:Iraq/features/personalization/screens/main_menu/main_menu_screen.dart';
+import 'package:Iraq/localization/language_controller.dart';
+import 'package:Iraq/localization/translations.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,10 +11,15 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(LanguageController());
     return GetMaterialApp(
       title: "School Project",
       home: const MainMenuScreen(),
       scrollBehavior: CustomScrollBehavior(),
+      translations: Messages(),
+      locale: const Locale("en_US"),
+      fallbackLocale: const Locale("ar_IQ"),
+      textDirection: controller.textDirection.value,
     );
   }
 }
