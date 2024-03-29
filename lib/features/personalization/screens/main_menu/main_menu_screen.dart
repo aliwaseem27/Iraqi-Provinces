@@ -31,11 +31,11 @@ class MainMenuScreen extends StatelessWidget {
                 Column(
                   children: [
                     // Title
-                    Text("Iraq Map", style: Theme.of(context).textTheme.headlineLarge),
+                    Text("iraqMap".tr, style: Theme.of(context).textTheme.headlineLarge),
                     const SizedBox(height: MSizes.spaceBetweenSections),
 
                     // SubTitle
-                    Text("Interactive map for enjoyable learning experience",
+                    Text("mainPageSubtitle".tr,
                         style: Theme.of(context).textTheme.titleLarge),
                     const SizedBox(height: MSizes.spaceBetweenSections),
                   ],
@@ -49,18 +49,18 @@ class MainMenuScreen extends StatelessWidget {
                         child: ElevatedButton(
                             onPressed: () => Get.to(() => const LearningScreen()), child: Text("startLearning".tr))),
                     const SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () => Get.to(() => const ExploreScreen()), child: const Text("Explore Maps")),
+                    ElevatedButton(onPressed: () => Get.to(() => const ExploreScreen()), child:  Text("exploreMaps".tr)),
                     const SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () => Get.to(()=> const QuestionsScreen()), child: const Text("Challenge yourself")),
+                    ElevatedButton(onPressed: () => Get.to(()=> const QuestionsScreen()), child:  Text("challengeYourself".tr)),
                     const SizedBox(height: MSizes.spaceBetweenSections),
-                    ElevatedButton(onPressed: () => Get.to(() => const AboutUsScreen()), child: const Text("About us")),
+                    ElevatedButton(onPressed: () => Get.to(() => const AboutUsScreen()), child:  Text("aboutUs".tr)),
                     const SizedBox(height: MSizes.spaceBetweenSections),
                   ],
                 ),
 
                 Column(
                   children: [
-                    const Text("Choose a language:"),
+                    Text("chooseALanguage".tr),
                     Row(
                       children: [
                         ElevatedButton(onPressed: () => languageController.chooseEnglish(), child: const Text("English")),
