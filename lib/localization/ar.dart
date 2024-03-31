@@ -1,3 +1,22 @@
 const Map<String, String> ar = {
   "startLearning": "ابدأ التعلم",
+
+  "Baghdad":"بغداد",
+  "Duhok":"دهوك",
+  "Erbil":"اربيل",
+  "Basra":"البصرة",
+  "Muthanna":"المثنى",
+  "Sulaymaniyah":"السليمانية",
+  "Diyala":"ديالى",
+  "Wasit":"واسط",
+  "Maysan":"ميسان",
+  "Al-Anbar":"الانبار",
+  "Najaf":"النجف",
+  "Ninawa":"نينوى",
+  "Salah Al-Din":"صلاح الدين",
+  "Kirkuk": "كركوك",
+  "Babil": "بابل",
+  "Al-Qadisiyyah": "القادسية",
+  "Dhi Qar": "ذي قار",
+  "Karbala": "كربلاء المقدسة",
 };

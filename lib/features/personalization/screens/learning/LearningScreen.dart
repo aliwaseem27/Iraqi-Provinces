@@ -34,7 +34,7 @@ class LearningScreen extends StatelessWidget {
                         controller.updateProvinceByButton(Province.values[i]);
                         Get.to(() => const DetailsScreen());
                       },
-                      child: Text(Province.values[i].title),
+                      child: Text(Province.values[i].title.tr),
                     ),
                 ],
               ),
@@ -48,13 +48,13 @@ class LearningScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (int i = Province.values.length~/2; i < Province.values.length; i++)
+                  for (int i = Province.values.length~/2+1; i < Province.values.length; i++)
                     ElevatedButton(
                       onPressed: () {
                         controller.updateProvinceByButton(Province.values[i]);
                         Get.to(() => const DetailsScreen());
                       },
-                      child: Text(Province.values[i].title),
+                      child: Text(Province.values[i].title.tr),
                     ),
                 ],
               ),

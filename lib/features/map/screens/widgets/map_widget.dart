@@ -1,5 +1,6 @@
 import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/features/map/models/country_model.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 import 'country_clipper.dart';
@@ -21,8 +22,12 @@ class MapWidget extends StatelessWidget {
     final controller = MapController.instance;
     return Stack(
       children: [
-        CustomPaint(
-          painter: BorderPainter(svgPath: country.path),
+        Positioned(
+          top: 0,
+          left: 0,
+          child: CustomPaint(
+            painter: BorderPainter(svgPath: country.path),
+          ),
         ),
         ClipPath(
           clipper: CountryClipper(svgPath: country.path),
