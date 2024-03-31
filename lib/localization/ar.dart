@@ -1,6 +1,8 @@
 const Map<String, String> ar = {
   "startLearning": "ابدأ التعلم",
 
+  // Provinces Titles
+  "Iraqi Provinces":"المحافظات العراقية",
   "Baghdad":"بغداد",
   "Duhok":"دهوك",
   "Erbil":"اربيل",
@@ -19,4 +21,12 @@ const Map<String, String> ar = {
   "Al-Qadisiyyah": "القادسية",
   "Dhi Qar": "ذي قار",
   "Karbala": "كربلاء المقدسة",
+
+  // Details Screen
+  "Km2": " كم مربع",
+  "Area:":"المساحة:",
+  "Population:":"التعداد السكاني:",
+  "Capital:":"مركز المحافظة:",
+  "Interesting Fact:":"حقيقة مثيرة للاهتمام:",
+  "moreInfo":"المزيد من المعلومات التاريخية",
 };

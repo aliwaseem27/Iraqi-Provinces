@@ -17,7 +17,7 @@ class DetailsScreen extends StatelessWidget {
     final controller = MapController.instance;
     return Scaffold(
       appBar: AppBar(
-        title: Obx(() => Text(controller.selectedProvince.value.title)),
+        title: Obx(() => Text(controller.selectedProvince.value.title.tr)),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
@@ -38,7 +38,7 @@ class DetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Obx(() => Text(
-                          controller.selectedProvince.value.title,
+                          controller.selectedProvince.value.title.tr,
                           style: Theme.of(context).textTheme.displayLarge,
                         )),
                   ],
@@ -50,25 +50,27 @@ class DetailsScreen extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     // Area
-                    Text("Area:", style: Theme.of(context).textTheme.titleLarge),
-                    Obx(() => Text("${controller.selectedProvince.value.area} Km2",
-                        style: Theme.of(context).textTheme.headlineLarge)),
+                    Text("Area:".tr, style: Theme.of(context).textTheme.titleLarge),
+                    Obx(() => Text(
+                          controller.selectedProvince.value.area+ "Km2".tr,
+                          style: Theme.of(context).textTheme.headlineLarge,
+                        )),
                     const SizedBox(height: MSizes.spaceBetweenSections),
 
                     // Population
-                    Text("Population:", style: Theme.of(context).textTheme.titleLarge),
+                    Text("Population:".tr, style: Theme.of(context).textTheme.titleLarge),
                     Obx(() => Text(controller.selectedProvince.value.population,
                         style: Theme.of(context).textTheme.headlineLarge)),
                     const SizedBox(height: MSizes.spaceBetweenSections),
 
                     // Capital
-                    Text("Capital:", style: Theme.of(context).textTheme.titleLarge),
+                    Text("Capital:".tr, style: Theme.of(context).textTheme.titleLarge),
                     Obx(() => Text(controller.selectedProvince.value.capitalCity,
                         style: Theme.of(context).textTheme.headlineLarge)),
                     const SizedBox(height: MSizes.spaceBetweenSections),
 
                     // Interesting Fact
-                    Text("Interesting Fact:", style: Theme.of(context).textTheme.titleLarge),
+                    Text("Interesting Fact:".tr, style: Theme.of(context).textTheme.titleLarge),
                     Obx(
                       () => Text(
                         controller.selectedProvince.value.interestingFact,
@@ -85,7 +87,7 @@ class DetailsScreen extends StatelessWidget {
                   children: [
                     ElevatedButton(
                         onPressed: () => Get.to(() => const HistoricalInfoScreen()),
-                        child: const Text("More Detailed Historical Info")),
+                        child:  Text("moreInfo".tr)),
                   ],
                 ),
               ],

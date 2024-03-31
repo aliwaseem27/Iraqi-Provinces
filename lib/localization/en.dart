@@ -6,6 +6,9 @@ const Map<String, String> en = {
   "chooseALanguage": "Choose a language:",
   "iraqMap": "Iraq Map",
   "mainPageSubtitle": "Interactive map for enjoyable learning experience",
+
+  // Provinces Titles
+  "Iraqi Provinces":"Iraqi Provinces",
   "Baghdad":"Baghdad",
   "Duhok":"Duhok",
   "Erbil":"Erbil",
@@ -24,4 +27,12 @@ const Map<String, String> en = {
   "Al-Qadisiyyah": "Al-Qadisiyyah",
   "Dhi Qar": "Dhi Qar",
   "Karbala": "Karbala",
+
+  // Details Screen
+  "Km2": " Km2",
+  "Area:":"Area:",
+  "Population:":"Population:",
+  "Capital:":"Capital:",
+  "Interesting Fact:":"Interesting Fact:",
+  "moreInfo":"More Detailed Historical Info",
 };

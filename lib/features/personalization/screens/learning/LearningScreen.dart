@@ -15,7 +15,7 @@ class LearningScreen extends StatelessWidget {
     final controller = MapController.instance;
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Iraqi Provinces"),
+        title:  Text("Iraqi Provinces".tr),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
