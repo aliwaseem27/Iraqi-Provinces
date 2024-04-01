@@ -1,7 +1,11 @@
+import 'package:Iraq/features/exam/controllers/exam_controller.dart';
 import 'package:Iraq/features/exam/screens/results/results.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get/get_state_manager/get_state_manager.dart';
+import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
 
 class QuestionsScreen extends StatefulWidget {
   const QuestionsScreen({super.key});
@@ -17,6 +21,7 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(ExamController());
     return Scaffold(
       appBar: AppBar(
         title: const Text("Choose the correct answer"),
@@ -48,51 +53,32 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 ),
 
                 // Question Title
-                Text("Q/ Which province is the most producer of oil?", style: Theme.of(context).textTheme.displaySmall),
+                Obx(() => Text(
+                      "Q/ ${controller.getQuestionText()}",
+                      style: Theme.of(context).textTheme.displaySmall,
+                    )),
                 const SizedBox(height: MSizes.spaceBetweenSections * 2),
               ],
             ),
 
             // Choices
-            Column(
-              children: <Widget>[
-                ListTile(
-                  title: const Text('Baghdad'),
-                  leading: Radio(
-                    value: options[0],
-                    groupValue: currentOption,
-                    onChanged: (value) {
-                      setState(() {
-                        currentOption = value!;
-                      });
-                    },
-                  ),
-                ),
-                ListTile(
-                  title: const Text('Basra'),
-                  leading: Radio(
-                    value: options[1],
-                    groupValue: currentOption,
-                    onChanged: (value) {
-                      setState(() {
-                        currentOption = value!;
-                      });
-                    },
-                  ),
-                ),
-                ListTile(
-                  title: const Text('Karkuk'),
-                  leading: Radio(
-                    value: options[2],
-                    groupValue: currentOption,
-                    onChanged: (value) {
-                      setState(() {
-                        currentOption = value!;
-                      });
-                    },
-                  ),
-                ),
-              ],
+            Obx(
+              () => Column(
+                children: List.generate(controller.getCurrentOptions().length, (index) {
+                  return ListTile(
+                    title: Text(controller.getCurrentOptions()[index]),
+                    leading: Radio(
+                      value: index,
+                      groupValue: controller.selectedOptionIndex.value,
+                      onChanged: (int? value) {
+                        if (value != null) {
+                          controller.selectOption(value);
+                        }
+                      },
+                    ),
+                  );
+                }),
+              ),
             ),
 
             // Next Button
@@ -101,9 +87,35 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
+                    // ElevatedButton(
+                    //   onPressed: () => Get.to(() => const ResultsScreen()),
+                    //   child: const Text("Next Question"),
+                    // ),
                     ElevatedButton(
-                      onPressed: () => Get.to(() => const ResultsScreen()),
-                      child: const Text("Next Question"),
+                      onPressed: () {
+                        if (!controller.isQuizCompleted()) {
+                          controller.nextQuestion();
+                        } else {
+                          // Show results or reset the quiz
+                          showDialog(
+                            context: context,
+                            builder: (context) => AlertDialog(
+                              title: Text("Quiz Completed"),
+                              content: Obx(() => Text("Your score is: ${controller.score}")),
+                              actions: <Widget>[
+                                TextButton(
+                                  onPressed: () {
+                                    controller.resetQuiz();
+                                    Navigator.of(context).pop(); // Close the dialog
+                                  },
+                                  child: Text('Restart'),
+                                ),
+                              ],
+                            ),
+                          );
+                        }
+                      },
+                      child: Obx(() => Text(controller.isQuizCompleted() ? "Show Results" : "Next")),
                     ),
                   ],
                 ),
