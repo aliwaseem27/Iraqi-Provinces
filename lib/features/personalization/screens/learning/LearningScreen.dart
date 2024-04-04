@@ -5,6 +5,7 @@ import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../../common/widgets/on_hover_button.dart';
 import '../../../map/controllers/map_controller.dart';
 
 class LearningScreen extends StatelessWidget {
@@ -29,32 +30,44 @@ class LearningScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   for (int i = 1; i < Province.values.length/2; i++)
-                    ElevatedButton(
-                      onPressed: () {
-                        controller.updateProvinceByButton(Province.values[i]);
-                        Get.to(() => const DetailsScreen());
-                      },
-                      child: Text(Province.values[i].title.tr),
+                    OnHoverButton(
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            controller.updateProvinceByButton(Province.values[i]);
+                            Get.to(() => const DetailsScreen());
+                          },
+                          child: Text(Province.values[i].title.tr),
+                        ),
+                      ),
                     ),
                 ],
               ),
             ),
+            SizedBox(width: MSizes.spaceBetweenSections),
             const Expanded(
               flex: 3,
               child: InteractiveMap(),
             ),
+            SizedBox(width: MSizes.spaceBetweenSections),
             Expanded(
               flex: 1,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
                   for (int i = Province.values.length~/2+1; i < Province.values.length; i++)
-                    ElevatedButton(
-                      onPressed: () {
-                        controller.updateProvinceByButton(Province.values[i]);
-                        Get.to(() => const DetailsScreen());
-                      },
-                      child: Text(Province.values[i].title.tr),
+                    OnHoverButton(
+                      child: SizedBox(
+                        width: double.infinity,
+                        child: ElevatedButton(
+                          onPressed: () {
+                            controller.updateProvinceByButton(Province.values[i]);
+                            Get.to(() => const DetailsScreen());
+                          },
+                          child: Text(Province.values[i].title.tr),
+                        ),
+                      ),
                     ),
                 ],
               ),
