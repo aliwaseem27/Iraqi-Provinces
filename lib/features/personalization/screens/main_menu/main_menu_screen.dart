@@ -103,11 +103,15 @@ class MainMenuScreen extends StatelessWidget {
                       const SizedBox(height: MSizes.spaceBetweenSections/2),
                       Row(
                         children: [
-                          ElevatedButton(
-                              onPressed: () => languageController.chooseEnglish(), child: const Text("English")),
+                          OnHoverButton(
+                            child: ElevatedButton(
+                                onPressed: () => languageController.chooseEnglish(), child: const Text("English")),
+                          ),
                           const SizedBox(width: MSizes.spaceBetweenSections),
-                          ElevatedButton(
-                              onPressed: () => languageController.chooseArabic(), child: const Text("العربية")),
+                          OnHoverButton(
+                            child: ElevatedButton(
+                                onPressed: () => languageController.chooseArabic(), child: const Text("العربية")),
+                          ),
                         ],
                       )
                     ],

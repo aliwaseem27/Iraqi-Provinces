@@ -16,6 +16,7 @@ dependencies:
   xml: ^6.5.0
   path_drawing: ^1.0.1
   get: ^4.6.6
+  flutter_markdown: ^0.6.22+1
 
 dev_dependencies:
   flutter_test:
@@ -29,6 +30,7 @@ flutter:
 
   assets:
     - assets/images/
+    - assets/articles/
 
 
   # fonts:
