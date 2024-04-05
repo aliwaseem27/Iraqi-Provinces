@@ -15,6 +15,26 @@ class ExamRepository extends GetxController {
       options: ["A bird", "A web framework", "A mobile SDK", "None of the above"],
       correctAnswerIndex: 2,
     ),
+    MCQ(
+      question: "What is Flutter2?",
+      options: ["A bird", "A web framework", "A mobile SDK", "None of the above"],
+      correctAnswerIndex: 2,
+    ),
+    MCQ(
+      question: "What is Flutter2?",
+      options: ["A bird", "A web framework", "A mobile SDK", "None of the above"],
+      correctAnswerIndex: 2,
+    ),
+    MCQ(
+      question: "What is Flutter2?",
+      options: ["A bird", "A web framework", "A mobile SDK", "None of the above"],
+      correctAnswerIndex: 2,
+    ),
+    MCQ(
+      question: "What is Flutter2?",
+      options: ["A bird", "A web framework", "A mobile SDK", "None of the above"],
+      correctAnswerIndex: 2,
+    ),
   ];
 
   List<MCQ> get questions => _questions;

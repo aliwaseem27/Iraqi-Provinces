@@ -155,11 +155,11 @@ class MainMenuScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text(
-                        "chooseALanguage".tr,
-                        style: Theme.of(context).textTheme.bodyMedium,
-                      ),
-                      const SizedBox(height: MSizes.spaceBetweenSections / 2),
+                      // Text(
+                      //   "chooseALanguage".tr,
+                      //   style: Theme.of(context).textTheme.bodyMedium,
+                      // ),
+                      // const SizedBox(height: MSizes.spaceBetweenSections / 2),
                       Row(
                         children: [
                           OnHoverButton(

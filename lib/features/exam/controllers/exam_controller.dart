@@ -12,6 +12,7 @@ class ExamController extends GetxController{
   final selectedOptionIndex = (-1).obs;
   final score = 0.obs;
   final questions = <MCQ>[].obs;
+  final wrongAnswers = [];
 
   @override
   void onInit() {
@@ -23,11 +24,17 @@ class ExamController extends GetxController{
     selectedOptionIndex.value = index;
   }
 
+  void increaseScore(){
+    if (isAnswerCorrect()) {
+      score.value++;
+    } else {
+      wrongAnswers.add(currentQuestionIndex.value);
+    }
+  }
+
 
   void nextQuestion() {
-    if (selectedOptionIndex.value == questions[currentQuestionIndex.value].correctAnswerIndex) {
-      score.value++;
-    }
+    increaseScore();
 
     if (currentQuestionIndex.value < questions.length - 1) {
       currentQuestionIndex.value++;

@@ -1,6 +1,7 @@
 import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/features/personalization/screens/learning/historical_info_screen.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
@@ -37,10 +38,61 @@ class DetailsScreen extends StatelessWidget {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Obx(() => Text(
-                          controller.selectedProvince.value.title.tr,
-                          style: Theme.of(context).textTheme.displayLarge,
-                        )),
+                    Expanded(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(10),
+                          gradient: LinearGradient(
+                            begin: Alignment.bottomLeft,
+                            end: Alignment.topRight,
+                            colors: [
+                              Color.fromRGBO(110, 143, 248, 1),
+                              Color.fromRGBO(101, 107, 245, 1),
+                            ],
+                          ),
+                        ),
+                        child: Stack(
+                          children: [
+                            Positioned(
+                              left: -50,
+                              bottom: -180,
+                              child: Container(
+                                width: 300,
+                                height: 300,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                  gradient: LinearGradient(
+                                    begin: Alignment.centerLeft,
+                                    end: Alignment.centerRight,
+                                    colors: [
+                                      Colors.white.withOpacity(0.05),
+                                      Colors.white.withOpacity(0.2),
+                                    ],
+                                  ),
+                                ),
+                              ),
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  padding: const EdgeInsets.only(bottom: MSizes.spaceBetweenSections),
+                                  child: Obx(
+                                    () => Text(
+                                      controller.selectedProvince.value.title.tr,
+                                      style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                                            color: Colors.white,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
                   ],
                 ),
                 const SizedBox(height: MSizes.spaceBetweenSections),
@@ -86,7 +138,11 @@ class DetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     ElevatedButton(
-                        onPressed: () => Get.to(() => const HistoricalInfoScreen()), child: Text("moreInfo".tr, style: TextStyle(color: Colors.black),)),
+                        onPressed: () => Get.to(() => const HistoricalInfoScreen()),
+                        child: Text(
+                          "moreInfo".tr,
+                          style: TextStyle(color: Colors.black),
+                        )),
                   ],
                 ),
               ],

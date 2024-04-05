@@ -1,3 +1,4 @@
+import 'package:Iraq/features/exam/controllers/exam_controller.dart';
 import 'package:Iraq/features/personalization/screens/main_menu/main_menu_screen.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
@@ -8,6 +9,7 @@ class ResultsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final controller = ExamController.instance;
     return Scaffold(
       appBar: AppBar(
         title: const Text("Your Results"),
@@ -25,7 +27,7 @@ class ResultsScreen extends StatelessWidget {
                 CircleAvatar(
                   radius: 64,
                   backgroundColor: Colors.teal,
-                  child: Text("80%", style: Theme.of(context).textTheme.displaySmall),
+                  child: Text("${controller.score/controller.questions.length * 100}%", style: Theme.of(context).textTheme.displaySmall),
                 ),
               ],
             ),

@@ -1,23 +1,14 @@
 import 'package:Iraq/features/exam/controllers/exam_controller.dart';
 import 'package:Iraq/features/exam/screens/results/results.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
+import 'package:get/state_manager.dart';
 
-class QuestionsScreen extends StatefulWidget {
+class QuestionsScreen extends StatelessWidget {
   const QuestionsScreen({super.key});
-
-  @override
-  State<QuestionsScreen> createState() => _QuestionsScreenState();
-}
-
-List<String> options = ["Option 1", "Option 2", "Option 3"];
-
-class _QuestionsScreenState extends State<QuestionsScreen> {
-  String currentOption = options[0];
 
   @override
   Widget build(BuildContext context) {
@@ -39,15 +30,28 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    Text(
-                      "40%",
-                      style: Theme.of(context).textTheme.titleMedium,
+                    Obx(
+                      () => Text(
+                        "${(controller.currentQuestionIndex.value / controller.questions.length * 100).toInt()}%" + "completed".tr,
+                        style: Theme.of(context).textTheme.titleMedium,
+                      ),
                     ),
-                    LinearProgressIndicator(
-                      value: 0.4,
-                      minHeight: 12,
-                      borderRadius: BorderRadius.circular(12),
-                    ),
+                    Obx(() => TweenAnimationBuilder<double>(
+                          tween: Tween<double>(
+                            begin: 0,
+                            end: controller.currentQuestionIndex.value / controller.questions.length,
+                          ),
+                          duration: const Duration(seconds: 1),
+                          curve: Curves.easeInOut,
+                          builder: (context, value, _) {
+                            return LinearProgressIndicator(
+                              value: value,
+                              minHeight: 16,
+                              borderRadius: BorderRadius.circular(12),
+                              valueColor: AlwaysStoppedAnimation<Color>(Color.fromRGBO(110, 143, 248, 1)),
+                            );
+                          },
+                        )),
                     const SizedBox(height: MSizes.spaceBetweenSections * 2),
                   ],
                 ),
@@ -65,16 +69,19 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
             Obx(
               () => Column(
                 children: List.generate(controller.getCurrentOptions().length, (index) {
-                  return ListTile(
-                    title: Text(controller.getCurrentOptions()[index]),
-                    leading: Radio(
-                      value: index,
-                      groupValue: controller.selectedOptionIndex.value,
-                      onChanged: (int? value) {
-                        if (value != null) {
-                          controller.selectOption(value);
-                        }
-                      },
+                  return InkWell(
+                    onTap: () {},
+                    child: ListTile(
+                      title: Text(controller.getCurrentOptions()[index]),
+                      leading: Radio(
+                        value: index,
+                        groupValue: controller.selectedOptionIndex.value,
+                        onChanged: (int? value) {
+                          if (value != null) {
+                            controller.selectOption(value);
+                          }
+                        },
+                      ),
                     ),
                   );
                 }),
@@ -87,35 +94,17 @@ class _QuestionsScreenState extends State<QuestionsScreen> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
-                    // ElevatedButton(
-                    //   onPressed: () => Get.to(() => const ResultsScreen()),
-                    //   child: const Text("Next Question"),
-                    // ),
                     ElevatedButton(
                       onPressed: () {
                         if (!controller.isQuizCompleted()) {
                           controller.nextQuestion();
                         } else {
                           // Show results or reset the quiz
-                          showDialog(
-                            context: context,
-                            builder: (context) => AlertDialog(
-                              title: Text("Quiz Completed"),
-                              content: Obx(() => Text("Your score is: ${controller.score}")),
-                              actions: <Widget>[
-                                TextButton(
-                                  onPressed: () {
-                                    controller.resetQuiz();
-                                    Navigator.of(context).pop(); // Close the dialog
-                                  },
-                                  child: Text('Restart'),
-                                ),
-                              ],
-                            ),
-                          );
+                          controller.increaseScore();
+                          Get.offAll(() => const ResultsScreen());
                         }
                       },
-                      child: Obx(() => Text(controller.isQuizCompleted() ? "Show Results" : "Next")),
+                      child: Obx(() => Text(controller.isQuizCompleted() ? "showResults".tr : "next".tr)),
                     ),
                   ],
                 ),
