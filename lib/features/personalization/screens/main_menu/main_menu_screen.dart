@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:Iraq/features/exam/screens/questions/questions.dart';
 import 'package:Iraq/features/infographic/screens/explore_screen.dart';
 import 'package:Iraq/common/widgets/on_hover_button.dart';
@@ -9,7 +7,6 @@ import 'package:Iraq/localization/language_controller.dart';
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -36,7 +33,7 @@ class MainMenuScreen extends StatelessWidget {
                   Column(
                     children: [
                       // Title
-                      Text("iraqMap".tr, style: Theme.of(context).textTheme.headlineLarge),
+                      Text("mainPageTitle".tr, style: Theme.of(context).textTheme.headlineLarge),
                       const SizedBox(height: MSizes.spaceBetweenSections),
 
                       // SubTitle
@@ -100,8 +97,10 @@ class MainMenuScreen extends StatelessWidget {
                   ),
 
                   Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text("chooseALanguage".tr),
+                      const SizedBox(height: MSizes.spaceBetweenSections/2),
                       Row(
                         children: [
                           ElevatedButton(
@@ -120,8 +119,11 @@ class MainMenuScreen extends StatelessWidget {
             // Map
             Expanded(
               flex: 2,
-              child: Container(
-                child: SvgPicture.asset(MImages.iraqMap),
+              child: Hero(
+                tag: "iraqMap",
+                child: Container(
+                  child: SvgPicture.asset(MImages.iraqMap),
+                ),
               ),
             ),
           ],

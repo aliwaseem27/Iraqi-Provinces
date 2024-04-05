@@ -4,7 +4,7 @@ const Map<String, String> en = {
   "challengeYourself": "Challenge yourself",
   "aboutUs": "About us",
   "chooseALanguage": "Choose a language:",
-  "iraqMap": "Iraq Map",
+  "mainPageTitle": "Iraqi Provinces",
   "mainPageSubtitle": "Interactive map for enjoyable learning experience",
 
   // Provinces Titles
@@ -27,6 +27,22 @@ const Map<String, String> en = {
   "Al-Qadisiyyah": "Al-Qadisiyyah",
   "Dhi Qar": "Dhi Qar",
   "Karbala": "Karbala",
+
+  // CapitalCity Titles
+  "Dihok":"Dihok",
+  "Hewlêr":"Hewlêr",
+  "Samawah":"Samawah",
+  "Silêmanî":"Silêmanî",
+  "Baqubah":"Baqubah",
+  "Kut":"Kut",
+  "Amarah":"Amarah",
+  "Ramadi":"Ramadi",
+  "Mosul":"Mosul",
+  "Tikrit":"Tikrit",
+  "Kerkûk": "Kerkûk",
+  "Hillah": "Hillah",
+  "Al Diwaniyah": "Al Diwaniyah",
+  "Nasiriyah": "Nasiriyah",
 
   // Details Screen
   "Km2": " Km2",

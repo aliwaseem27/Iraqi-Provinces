@@ -25,7 +25,7 @@ class DetailsScreen extends StatelessWidget {
           children: [
             const Expanded(
               flex: 1,
-              child: InteractiveMap(),
+              child: Hero(tag: "iraqMap", child: InteractiveMap()),
             ),
             const SizedBox(width: MSizes.spaceBetweenSections),
             Expanded(
@@ -52,7 +52,7 @@ class DetailsScreen extends StatelessWidget {
                     // Area
                     Text("Area:".tr, style: Theme.of(context).textTheme.titleLarge),
                     Obx(() => Text(
-                          controller.selectedProvince.value.area+ "Km2".tr,
+                          controller.selectedProvince.value.area + "Km2".tr,
                           style: Theme.of(context).textTheme.headlineLarge,
                         )),
                     const SizedBox(height: MSizes.spaceBetweenSections),
@@ -65,7 +65,7 @@ class DetailsScreen extends StatelessWidget {
 
                     // Capital
                     Text("Capital:".tr, style: Theme.of(context).textTheme.titleLarge),
-                    Obx(() => Text(controller.selectedProvince.value.capitalCity,
+                    Obx(() => Text(controller.selectedProvince.value.capitalCity.tr,
                         style: Theme.of(context).textTheme.headlineLarge)),
                     const SizedBox(height: MSizes.spaceBetweenSections),
 
@@ -86,8 +86,7 @@ class DetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     ElevatedButton(
-                        onPressed: () => Get.to(() => const HistoricalInfoScreen()),
-                        child:  Text("moreInfo".tr)),
+                        onPressed: () => Get.to(() => const HistoricalInfoScreen()), child: Text("moreInfo".tr)),
                   ],
                 ),
               ],

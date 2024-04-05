@@ -16,7 +16,7 @@ class LearningScreen extends StatelessWidget {
     final controller = MapController.instance;
     return Scaffold(
       appBar: AppBar(
-        title:  Text("Iraqi Provinces".tr),
+        title: Text("Iraqi Provinces".tr),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
@@ -29,7 +29,7 @@ class LearningScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (int i = 1; i < Province.values.length/2; i++)
+                  for (int i = 1; i < Province.values.length / 2; i++)
                     OnHoverButton(
                       child: SizedBox(
                         width: double.infinity,
@@ -48,7 +48,10 @@ class LearningScreen extends StatelessWidget {
             SizedBox(width: MSizes.spaceBetweenSections),
             const Expanded(
               flex: 3,
-              child: InteractiveMap(),
+              child: Hero(
+                tag: "iraqMap",
+                child: InteractiveMap(),
+              ),
             ),
             SizedBox(width: MSizes.spaceBetweenSections),
             Expanded(
@@ -56,7 +59,7 @@ class LearningScreen extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  for (int i = Province.values.length~/2+1; i < Province.values.length; i++)
+                  for (int i = Province.values.length ~/ 2 + 1; i < Province.values.length; i++)
                     OnHoverButton(
                       child: SizedBox(
                         width: double.infinity,

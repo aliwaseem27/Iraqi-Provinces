@@ -1,5 +1,27 @@
 const Map<String, String> ar = {
   "startLearning": "ابدأ التعلم",
+  "exploreMaps": "تصفح الخرائط",
+  "challengeYourself": "اختبر معلوماتك",
+  "aboutUs": "من نحن",
+  "chooseALanguage": "اختر اللغة:",
+  "mainPageTitle": "المحافظات العراقية",
+  "mainPageSubtitle": "خريطة تفاعلية لتجربة تعليمية ممتعة",
+
+  // CapitalCity Titles
+  "Dihok":"دهوك",
+  "Hewlêr":"هولير",
+  "Samawah":"السماوة",
+  "Silêmanî":"السليمانية",
+  "Baqubah":"بعقوبة",
+  "Kut":"الكوت",
+  "Amarah":"العمارة",
+  "Ramadi":"الرمادي",
+  "Mosul":"الموصل",
+  "Tikrit":"تكريت",
+  "Kerkûk": "كركوك",
+  "Hillah": "الحلة",
+  "Al Diwaniyah": "الديوانية",
+  "Nasiriyah": "الناصرية",
 
   // Provinces Titles
   "Iraqi Provinces":"المحافظات العراقية",
