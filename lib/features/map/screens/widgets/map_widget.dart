@@ -1,7 +1,9 @@
 import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/features/map/models/country_model.dart';
+import 'package:Iraq/features/personalization/screens/learning/details_screen.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'country_clipper.dart';
 import 'country_painter.dart';
@@ -32,7 +34,10 @@ class MapWidget extends StatelessWidget {
         ClipPath(
           clipper: CountryClipper(svgPath: country.path),
           child: CountryWidget(
-            onTap: () => controller.updateCountry(country),
+            onTap: () {
+              controller.updateCountry(country);
+              Get.to(()=> const DetailsScreen());
+            },
             color: color,
           ),
         ),

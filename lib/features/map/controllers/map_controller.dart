@@ -1,5 +1,6 @@
 import 'package:Iraq/data/repositories/map_repository.dart';
 import 'package:Iraq/utils/constants/enums.dart';
+import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
@@ -15,12 +16,32 @@ class MapController extends GetxController {
   final selectedProvince = Province.empty.obs;
   final List<CountryModel> countries = <CountryModel>[].obs;
 
+  final TransformationController transformationController = TransformationController();
+  final double _minScale = 1.0;
+  final double _maxScale = 3.0;
+
   @override
   void onInit() {
     super.onInit();
     loadMap().then((loadedCountries) {
       countries.assignAll(loadedCountries);
     });
+  }
+
+  void zoomIn() {
+    final currentScale = transformationController.value.getMaxScaleOnAxis();
+    final newScale = currentScale * 1.2;
+    if (newScale <= _maxScale) {
+      transformationController.value = transformationController.value.scaled(1.2);
+    }
+  }
+
+  void zoomOut() {
+    final currentScale = transformationController.value.getMaxScaleOnAxis();
+    final newScale = currentScale / 1.2;
+    if (newScale >= _minScale) {
+      transformationController.value = transformationController.value.scaled(1 / 1.2);
+    }
   }
 
   Future<List<CountryModel>> loadMap() async {
