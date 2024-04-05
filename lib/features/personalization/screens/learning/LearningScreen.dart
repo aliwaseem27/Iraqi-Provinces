@@ -38,7 +38,7 @@ class LearningScreen extends StatelessWidget {
                             controller.updateProvinceByButton(Province.values[i]);
                             Get.to(() => const DetailsScreen());
                           },
-                          child: Text(Province.values[i].title.tr),
+                          child: Text(Province.values[i].title.tr, style: TextStyle(color: Colors.black),),
                         ),
                       ),
                     ),
@@ -68,7 +68,7 @@ class LearningScreen extends StatelessWidget {
                             controller.updateProvinceByButton(Province.values[i]);
                             Get.to(() => const DetailsScreen());
                           },
-                          child: Text(Province.values[i].title.tr),
+                          child: Text(Province.values[i].title.tr, style: TextStyle(color: Colors.black),),
                         ),
                       ),
                     ),

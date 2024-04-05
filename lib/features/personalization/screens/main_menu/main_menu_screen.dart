@@ -6,7 +6,9 @@ import 'package:Iraq/features/personalization/screens/learning/LearningScreen.da
 import 'package:Iraq/localization/language_controller.dart';
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
@@ -29,17 +31,67 @@ class MainMenuScreen extends StatelessWidget {
               flex: 1,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Column(
-                    children: [
-                      // Title
-                      Text("mainPageTitle".tr, style: Theme.of(context).textTheme.headlineLarge),
-                      const SizedBox(height: MSizes.spaceBetweenSections),
+                  Container(
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(10),
+                      gradient: LinearGradient(
+                        begin: Alignment.bottomLeft,
+                        end: Alignment.topRight,
+                        colors: [
+                          Color.fromRGBO(110, 143, 248, 1),
+                          Color.fromRGBO(101, 107, 245, 1),
+                        ],
+                      ),
+                    ),
+                    child: Stack(
+                      children: [
+                        Positioned(
+                          left: -50,
+                          bottom: -180,
+                          child: Container(
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                              gradient: LinearGradient(
+                                begin: Alignment.centerLeft,
+                                end: Alignment.centerRight,
+                                colors: [
+                                  Colors.white.withOpacity(0.05),
+                                  Colors.white.withOpacity(0.2),
+                                ],
+                              ),
+                            ),
+                            width: 300,
+                            height: 300,
+                          ),
+                        ),
+                        Container(
+                          padding: EdgeInsets.all(MSizes.spaceBetweenSections),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              // Title
+                              Text("mainPageTitle".tr,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .headlineLarge
+                                      ?.copyWith(color: Colors.white, fontWeight: FontWeight.w800)),
+                              const SizedBox(height: MSizes.spaceBetweenSections),
 
-                      // SubTitle
-                      Text("mainPageSubtitle".tr, style: Theme.of(context).textTheme.titleLarge),
-                      const SizedBox(height: MSizes.spaceBetweenSections),
-                    ],
+                              // SubTitle
+                              Text("mainPageSubtitle".tr,
+                                  style: Theme.of(context)
+                                      .textTheme
+                                      .titleLarge
+                                      ?.copyWith(color: Colors.white, fontWeight: FontWeight.w400)),
+                              const SizedBox(height: MSizes.spaceBetweenSections),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
 
                   // Options
@@ -48,13 +100,15 @@ class MainMenuScreen extends StatelessWidget {
                     children: [
                       OnHoverButton(
                         child: ElevatedButton(
-                            onPressed: () => Get.to(() => const LearningScreen()), child: Row(
-                              children: [
-                                Icon(Icons.book_outlined),
-                                SizedBox(width: MSizes.spaceBetweenSections),
-                                Text("startLearning".tr),
-                              ],
-                            ),),
+                          onPressed: () => Get.to(() => const LearningScreen()),
+                          child: Row(
+                            children: [
+                              Icon(Icons.book_outlined),
+                              SizedBox(width: MSizes.spaceBetweenSections),
+                              Text("startLearning".tr, style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
+                        ),
                       ),
                       const SizedBox(height: MSizes.spaceBetweenSections),
                       OnHoverButton(
@@ -64,7 +118,7 @@ class MainMenuScreen extends StatelessWidget {
                             children: [
                               Icon(Icons.map_outlined),
                               SizedBox(width: MSizes.spaceBetweenSections),
-                              Text("exploreMaps".tr),
+                              Text("exploreMaps".tr, style: TextStyle(color: Colors.black),),
                             ],
                           ),
                         ),
@@ -77,20 +131,22 @@ class MainMenuScreen extends StatelessWidget {
                               children: [
                                 Icon(Icons.question_answer_outlined),
                                 SizedBox(width: MSizes.spaceBetweenSections),
-                                Text("challengeYourself".tr),
+                                Text("challengeYourself".tr, style: TextStyle(color: Colors.black),),
                               ],
                             )),
                       ),
                       const SizedBox(height: MSizes.spaceBetweenSections),
                       OnHoverButton(
                         child: ElevatedButton(
-                            onPressed: () => Get.to(() => const AboutUsScreen()), child: Row(
-                              children: [
-                                Icon(Icons.info_outlined),
-                                SizedBox(width: MSizes.spaceBetweenSections),
-                                Text("aboutUs".tr),
-                              ],
-                            ),),
+                          onPressed: () => Get.to(() => const AboutUsScreen()),
+                          child: Row(
+                            children: [
+                              Icon(Icons.info_outlined),
+                              SizedBox(width: MSizes.spaceBetweenSections),
+                              Text("aboutUs".tr, style: TextStyle(color: Colors.black),),
+                            ],
+                          ),
+                        ),
                       ),
                       const SizedBox(height: MSizes.spaceBetweenSections),
                     ],
@@ -99,18 +155,21 @@ class MainMenuScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      Text("chooseALanguage".tr),
-                      const SizedBox(height: MSizes.spaceBetweenSections/2),
+                      Text(
+                        "chooseALanguage".tr,
+                        style: Theme.of(context).textTheme.bodyMedium,
+                      ),
+                      const SizedBox(height: MSizes.spaceBetweenSections / 2),
                       Row(
                         children: [
                           OnHoverButton(
                             child: ElevatedButton(
-                                onPressed: () => languageController.chooseEnglish(), child: const Text("English")),
+                                onPressed: () => languageController.chooseEnglish(), child: const Text("English", style: TextStyle(color: Colors.black),)),
                           ),
                           const SizedBox(width: MSizes.spaceBetweenSections),
                           OnHoverButton(
                             child: ElevatedButton(
-                                onPressed: () => languageController.chooseArabic(), child: const Text("العربية")),
+                                onPressed: () => languageController.chooseArabic(), child: const Text("العربية", style: TextStyle(color: Colors.black),)),
                           ),
                         ],
                       )
@@ -120,14 +179,14 @@ class MainMenuScreen extends StatelessWidget {
               ),
             ),
 
+            SizedBox(width: MSizes.spaceBetweenSections),
+
             // Map
             Expanded(
               flex: 2,
               child: Hero(
                 tag: "iraqMap",
-                child: Container(
-                  child: SvgPicture.asset(MImages.iraqMap),
-                ),
+                child: FittedBox(child: SvgPicture.asset(MImages.iraqMap, fit: BoxFit.cover)),
               ),
             ),
           ],

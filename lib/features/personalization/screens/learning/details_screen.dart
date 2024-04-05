@@ -86,7 +86,7 @@ class DetailsScreen extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.end,
                   children: [
                     ElevatedButton(
-                        onPressed: () => Get.to(() => const HistoricalInfoScreen()), child: Text("moreInfo".tr)),
+                        onPressed: () => Get.to(() => const HistoricalInfoScreen()), child: Text("moreInfo".tr, style: TextStyle(color: Colors.black),)),
                   ],
                 ),
               ],

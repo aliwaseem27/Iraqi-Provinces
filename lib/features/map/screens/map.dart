@@ -2,7 +2,6 @@ import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/features/map/screens/widgets/map_widget.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:Iraq/utils/helpers/helper_functions.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,9 +15,11 @@ class InteractiveMap extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.end,
         children: [
-
           Container(
-            decoration: BoxDecoration(border: Border.all(color: Colors.black, width: 5)),
+            decoration: BoxDecoration(
+              border: Border.all(color: Color.fromRGBO(101, 107, 245,1), width: 5),
+              borderRadius: BorderRadius.circular(20),
+            ),
             width: 500,
             height: 500,
             child: Center(
