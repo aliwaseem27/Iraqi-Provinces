@@ -19,8 +19,8 @@ class MyApp extends StatelessWidget {
       theme: MAppTheme.lightTheme,
       scrollBehavior: CustomScrollBehavior(),
       translations: Messages(),
-      locale: const Locale("en_US"),
-      fallbackLocale: const Locale("ar_IQ"),
+      locale: Locale(controller.currentLanguage.value),
+      fallbackLocale: const Locale("en_US"),
       textDirection: controller.textDirection.value,
     );
   }

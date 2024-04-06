@@ -1,3 +1,4 @@
+import 'package:Iraq/data/repositories/exam_repository.dart';
 import 'package:Iraq/features/exam/screens/questions/questions.dart';
 import 'package:Iraq/features/infographic/screens/explore_screen.dart';
 import 'package:Iraq/common/widgets/on_hover_button.dart';
@@ -6,12 +7,11 @@ import 'package:Iraq/features/personalization/screens/learning/LearningScreen.da
 import 'package:Iraq/localization/language_controller.dart';
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
+import '../../../exam/controllers/exam_controller.dart';
 import '../../../map/controllers/map_controller.dart';
 
 class MainMenuScreen extends StatelessWidget {
@@ -19,7 +19,8 @@ class MainMenuScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = Get.put(MapController());
+    final mapController = Get.put(MapController());
+    final examRepo = Get.put(ExamRepository());
     final languageController = LanguageController.instance;
     return Scaffold(
       body: Container(
@@ -105,7 +106,10 @@ class MainMenuScreen extends StatelessWidget {
                             children: [
                               Icon(Icons.book_outlined),
                               SizedBox(width: MSizes.spaceBetweenSections),
-                              Text("startLearning".tr, style: TextStyle(color: Colors.black),),
+                              Text(
+                                "startLearning".tr,
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ],
                           ),
                         ),
@@ -118,7 +122,10 @@ class MainMenuScreen extends StatelessWidget {
                             children: [
                               Icon(Icons.map_outlined),
                               SizedBox(width: MSizes.spaceBetweenSections),
-                              Text("exploreMaps".tr, style: TextStyle(color: Colors.black),),
+                              Text(
+                                "exploreMaps".tr,
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ],
                           ),
                         ),
@@ -131,7 +138,10 @@ class MainMenuScreen extends StatelessWidget {
                               children: [
                                 Icon(Icons.question_answer_outlined),
                                 SizedBox(width: MSizes.spaceBetweenSections),
-                                Text("challengeYourself".tr, style: TextStyle(color: Colors.black),),
+                                Text(
+                                  "challengeYourself".tr,
+                                  style: TextStyle(color: Colors.black),
+                                ),
                               ],
                             )),
                       ),
@@ -143,7 +153,10 @@ class MainMenuScreen extends StatelessWidget {
                             children: [
                               Icon(Icons.info_outlined),
                               SizedBox(width: MSizes.spaceBetweenSections),
-                              Text("aboutUs".tr, style: TextStyle(color: Colors.black),),
+                              Text(
+                                "aboutUs".tr,
+                                style: TextStyle(color: Colors.black),
+                              ),
                             ],
                           ),
                         ),
@@ -164,12 +177,20 @@ class MainMenuScreen extends StatelessWidget {
                         children: [
                           OnHoverButton(
                             child: ElevatedButton(
-                                onPressed: () => languageController.chooseEnglish(), child: const Text("English", style: TextStyle(color: Colors.black),)),
+                                onPressed: () => languageController.chooseEnglish(),
+                                child: const Text(
+                                  "English",
+                                  style: TextStyle(color: Colors.black),
+                                )),
                           ),
                           const SizedBox(width: MSizes.spaceBetweenSections),
                           OnHoverButton(
                             child: ElevatedButton(
-                                onPressed: () => languageController.chooseArabic(), child: const Text("العربية", style: TextStyle(color: Colors.black),)),
+                                onPressed: () => languageController.chooseArabic(),
+                                child: const Text(
+                                  "العربية",
+                                  style: TextStyle(color: Colors.black),
+                                )),
                           ),
                         ],
                       )
@@ -186,7 +207,12 @@ class MainMenuScreen extends StatelessWidget {
               flex: 2,
               child: Hero(
                 tag: "iraqMap",
-                child: FittedBox(child: SvgPicture.asset(MImages.iraqMap, fit: BoxFit.cover)),
+                child: SizedBox.expand(
+                  child: FittedBox(
+                    child: SvgPicture.asset(MImages.iraqMap, fit: BoxFit.cover),
+                  ),
+                ),
+                // child: SvgPicture.asset(MImages.iraqMap, fit: BoxFit.cover),
               ),
             ),
           ],

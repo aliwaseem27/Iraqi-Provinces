@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 class ExamController extends GetxController{
   static ExamController get instance => Get.find();
 
-  final ExamRepository examRepository = Get.put(ExamRepository());
+  final ExamRepository examRepository = ExamRepository.instance;
 
   final currentQuestionIndex = 0.obs;
   final selectedOptionIndex = (-1).obs;
@@ -65,6 +65,6 @@ class ExamController extends GetxController{
 
   // Check if the quiz has ended
   bool isQuizCompleted() {
-    return currentQuestionIndex.value >= questions.length - 1 && selectedOptionIndex.value != -1;
+    return currentQuestionIndex.value >= questions.length - 1;
   }
 }
