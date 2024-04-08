@@ -3,9 +3,6 @@ import 'package:Iraq/features/exam/screens/results/results.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:get/state_manager.dart';
 
 class QuestionsScreen extends StatelessWidget {
   const QuestionsScreen({super.key});
@@ -32,7 +29,7 @@ class QuestionsScreen extends StatelessWidget {
                   children: [
                     Obx(
                       () => Text(
-                        "${(controller.currentQuestionIndex.value / controller.questions.length * 100).toInt()}%" + "completed".tr,
+                        "${(controller.currentQuestionIndex.value / controller.questions.length * 100).toInt()}%${"completed".tr}",
                         style: Theme.of(context).textTheme.titleMedium,
                       ),
                     ),
@@ -48,7 +45,7 @@ class QuestionsScreen extends StatelessWidget {
                               value: value,
                               minHeight: 16,
                               borderRadius: BorderRadius.circular(12),
-                              valueColor: AlwaysStoppedAnimation<Color>(Color.fromRGBO(110, 143, 248, 1)),
+                              valueColor: const AlwaysStoppedAnimation<Color>(Color.fromRGBO(110, 143, 248, 1)),
                             );
                           },
                         )),

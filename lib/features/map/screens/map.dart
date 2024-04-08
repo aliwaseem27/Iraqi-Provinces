@@ -17,7 +17,7 @@ class InteractiveMap extends StatelessWidget {
         children: [
           Container(
             decoration: BoxDecoration(
-              border: Border.all(color: Color.fromRGBO(101, 107, 245,1), width: 5),
+              border: Border.all(color: const Color.fromRGBO(101, 107, 245,1), width: 5),
               borderRadius: BorderRadius.circular(20),
             ),
             width: 500,
@@ -45,7 +45,7 @@ class InteractiveMap extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: MSizes.spaceBetweenSections / 2),
+          const SizedBox(height: MSizes.spaceBetweenSections / 2),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -54,22 +54,22 @@ class InteractiveMap extends StatelessWidget {
                 height: 24,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.all(0),
+                    padding: const EdgeInsets.all(0),
                   ),
                   onPressed: () => controller.zoomOut(),
-                  child: Icon(Icons.remove),
+                  child: const Icon(Icons.remove),
                 ),
               ),
-              SizedBox(width: MSizes.spaceBetweenSections / 2),
+              const SizedBox(width: MSizes.spaceBetweenSections / 2),
               SizedBox(
                 width: 24,
                 height: 24,
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
-                    padding: EdgeInsets.all(0),
+                    padding: const EdgeInsets.all(0),
                   ),
                   onPressed: () => controller.zoomIn(),
-                  child: Icon(Icons.add),
+                  child: const Icon(Icons.add),
                 ),
               ),
             ],

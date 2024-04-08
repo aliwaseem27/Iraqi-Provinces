@@ -38,14 +38,14 @@ class LearningScreen extends StatelessWidget {
                             controller.updateProvinceByButton(Province.values[i]);
                             Get.to(() => const DetailsScreen());
                           },
-                          child: Text(Province.values[i].title.tr, style: TextStyle(color: Colors.black),),
+                          child: Text(Province.values[i].title.tr, style: const TextStyle(color: Colors.black),),
                         ),
                       ),
                     ),
                 ],
               ),
             ),
-            SizedBox(width: MSizes.spaceBetweenSections),
+            const SizedBox(width: MSizes.spaceBetweenSections),
             const Expanded(
               flex: 3,
               child: Hero(
@@ -53,7 +53,7 @@ class LearningScreen extends StatelessWidget {
                 child: InteractiveMap(),
               ),
             ),
-            SizedBox(width: MSizes.spaceBetweenSections),
+            const SizedBox(width: MSizes.spaceBetweenSections),
             Expanded(
               flex: 1,
               child: Column(
@@ -68,7 +68,7 @@ class LearningScreen extends StatelessWidget {
                             controller.updateProvinceByButton(Province.values[i]);
                             Get.to(() => const DetailsScreen());
                           },
-                          child: Text(Province.values[i].title.tr, style: TextStyle(color: Colors.black),),
+                          child: Text(Province.values[i].title.tr, style: const TextStyle(color: Colors.black),),
                         ),
                       ),
                     ),

@@ -33,13 +33,13 @@ class HistoricalInfoScreen extends StatelessWidget {
                             return Markdown(
                               data: snapshot.data!,
                               styleSheet: MarkdownStyleSheet(
-                                textScaler: TextScaler.linear(1.2),
+                                textScaler: const TextScaler.linear(1.2),
                               ),
                             );
                           } else if (snapshot.hasError) {
-                            return Text('Error loading Info');
+                            return const Text('Error loading Info');
                           }
-                          return Center(child: CircularProgressIndicator());
+                          return const Center(child: CircularProgressIndicator());
                         },
                       ),
                     ),

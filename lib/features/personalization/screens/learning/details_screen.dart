@@ -1,12 +1,8 @@
 import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/features/personalization/screens/learning/historical_info_screen.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
-import 'package:get/get_state_manager/src/rx_flutter/rx_obx_widget.dart';
-import 'package:get/state_manager.dart';
 
 import '../../../map/screens/map.dart';
 
@@ -42,7 +38,7 @@ class DetailsScreen extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(10),
-                          gradient: LinearGradient(
+                          gradient: const LinearGradient(
                             begin: Alignment.bottomLeft,
                             end: Alignment.topRight,
                             colors: [
@@ -141,7 +137,7 @@ class DetailsScreen extends StatelessWidget {
                         onPressed: () => Get.to(() => const HistoricalInfoScreen()),
                         child: Text(
                           "moreInfo".tr,
-                          style: TextStyle(color: Colors.black),
+                          style: const TextStyle(color: Colors.black),
                         )),
                   ],
                 ),

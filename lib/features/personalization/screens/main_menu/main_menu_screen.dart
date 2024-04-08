@@ -11,7 +11,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../../../exam/controllers/exam_controller.dart';
 import '../../../map/controllers/map_controller.dart';
 
 class MainMenuScreen extends StatelessWidget {
@@ -38,7 +37,7 @@ class MainMenuScreen extends StatelessWidget {
                     width: double.infinity,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10),
-                      gradient: LinearGradient(
+                      gradient: const LinearGradient(
                         begin: Alignment.bottomLeft,
                         end: Alignment.topRight,
                         colors: [
@@ -69,7 +68,7 @@ class MainMenuScreen extends StatelessWidget {
                           ),
                         ),
                         Container(
-                          padding: EdgeInsets.all(MSizes.spaceBetweenSections),
+                          padding: const EdgeInsets.all(MSizes.spaceBetweenSections),
                           child: Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
@@ -104,11 +103,11 @@ class MainMenuScreen extends StatelessWidget {
                           onPressed: () => Get.to(() => const LearningScreen()),
                           child: Row(
                             children: [
-                              Icon(Icons.book_outlined),
-                              SizedBox(width: MSizes.spaceBetweenSections),
+                              const Icon(Icons.book_outlined),
+                              const SizedBox(width: MSizes.spaceBetweenSections),
                               Text(
                                 "startLearning".tr,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                               ),
                             ],
                           ),
@@ -120,11 +119,11 @@ class MainMenuScreen extends StatelessWidget {
                           onPressed: () => Get.to(() => const ExploreScreen()),
                           child: Row(
                             children: [
-                              Icon(Icons.map_outlined),
-                              SizedBox(width: MSizes.spaceBetweenSections),
+                              const Icon(Icons.map_outlined),
+                              const SizedBox(width: MSizes.spaceBetweenSections),
                               Text(
                                 "exploreMaps".tr,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                               ),
                             ],
                           ),
@@ -136,11 +135,11 @@ class MainMenuScreen extends StatelessWidget {
                             onPressed: () => Get.to(() => const QuestionsScreen()),
                             child: Row(
                               children: [
-                                Icon(Icons.question_answer_outlined),
-                                SizedBox(width: MSizes.spaceBetweenSections),
+                                const Icon(Icons.question_answer_outlined),
+                                const SizedBox(width: MSizes.spaceBetweenSections),
                                 Text(
                                   "challengeYourself".tr,
-                                  style: TextStyle(color: Colors.black),
+                                  style: const TextStyle(color: Colors.black),
                                 ),
                               ],
                             )),
@@ -151,11 +150,11 @@ class MainMenuScreen extends StatelessWidget {
                           onPressed: () => Get.to(() => const AboutUsScreen()),
                           child: Row(
                             children: [
-                              Icon(Icons.info_outlined),
-                              SizedBox(width: MSizes.spaceBetweenSections),
+                              const Icon(Icons.info_outlined),
+                              const SizedBox(width: MSizes.spaceBetweenSections),
                               Text(
                                 "aboutUs".tr,
-                                style: TextStyle(color: Colors.black),
+                                style: const TextStyle(color: Colors.black),
                               ),
                             ],
                           ),
@@ -200,7 +199,7 @@ class MainMenuScreen extends StatelessWidget {
               ),
             ),
 
-            SizedBox(width: MSizes.spaceBetweenSections),
+            const SizedBox(width: MSizes.spaceBetweenSections),
 
             // Map
             Expanded(
