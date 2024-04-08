@@ -51,6 +51,7 @@ const Map<String, String> en = {
   "Capital:":"Capital:",
   "Interesting Fact:":"Interesting Fact:",
   "moreInfo":"More Detailed Historical Info",
+  "moreAbout":"Enjoy reading more about ",
 
   // Exam Screen
   "completed":" Completed",

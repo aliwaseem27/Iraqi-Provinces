@@ -51,6 +51,7 @@ const Map<String, String> ar = {
   "Capital:":"مركز المحافظة:",
   "Interesting Fact:":"حقيقة مثيرة للاهتمام:",
   "moreInfo":"المزيد من المعلومات التاريخية",
+  "moreAbout":"استمتع بقراءة المزيد عن ",
 
   // Exam Screen
   "completed":" اكتمل",

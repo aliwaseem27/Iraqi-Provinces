@@ -30,7 +30,8 @@ flutter:
 
   assets:
     - assets/images/
-    - assets/articles/
+    - assets/articles/ar/
+    - assets/articles/en/
     - assets/questions/
 
 

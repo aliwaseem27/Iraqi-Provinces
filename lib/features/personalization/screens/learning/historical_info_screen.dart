@@ -1,23 +1,20 @@
+import 'package:Iraq/features/map/controllers/map_controller.dart';
+import 'package:Iraq/features/personalization/controllers/historical_info_controller.dart';
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
-import 'package:Iraq/utils/constants/text_strings.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
 import 'package:get/get.dart';
 
 class HistoricalInfoScreen extends StatelessWidget {
   const HistoricalInfoScreen({super.key});
 
-  Future<String> loadMarkdownAsset() async {
-    return await rootBundle.loadString('assets/articles/babil.md');
-  }
-
   @override
   Widget build(BuildContext context) {
+    final controller = Get.put(HistoricalInfoController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Historical Info about (Name)"),
+        title: Text("moreAbout".tr + MapController.instance.selectedProvince.value.title.tr),
       ),
       body: SingleChildScrollView(
         child: Container(
@@ -27,25 +24,20 @@ class HistoricalInfoScreen extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
-                    // Text("Baghdad".tr, style: Theme.of(context).textTheme.displayMedium),
                     SizedBox(
                       height: MediaQuery.of(context).size.height,
-                      // width: 300,
                       child: FutureBuilder(
-                        future: loadMarkdownAsset(),
+                        future: controller.loadMarkdownAsset(),
                         builder: (BuildContext context, AsyncSnapshot<String> snapshot) {
                           if (snapshot.hasData) {
                             return Markdown(
                               data: snapshot.data!,
                               styleSheet: MarkdownStyleSheet(
                                 textScaler: TextScaler.linear(1.2),
-                                // p: TextStyle(fontSize: 16.0), // For normal text paragraphs
-                                // h1: TextStyle(fontSize: 42.0), // For h1 headers
-                                // h2: TextStyle(fontSize: 28.0), // For h2 headers
                               ),
                             );
                           } else if (snapshot.hasError) {
-                            return Text('Error loading Markdown');
+                            return Text('Error loading Info');
                           }
                           return Center(child: CircularProgressIndicator());
                         },
