@@ -55,7 +55,7 @@ const Map<String, String> en = {
 
   // StartExam Screen
   "startExamTitle":"Are you up for a challenge? Test your knowledge of Iraq by taking this multiple-choice quiz!",
-  "chooseNumberOfQuestions":"Select a number of questions ranging from 5 to 25.",
+  "chooseNumberOfQuestions":"Select a number of questions ranging from 5 to 25",
   "startQuiz":"Start Quiz",
 
   // Exam Screen

@@ -9,7 +9,7 @@ class QuestionsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final controller = ExamController.instance;
+    final controller = Get.put(ExamController());
     return Scaffold(
       appBar: AppBar(
         title: const Text("Choose the correct answer"),

@@ -1,4 +1,5 @@
 import 'package:Iraq/data/repositories/exam_repository.dart';
+import 'package:Iraq/features/exam/controllers/start_exam_controller.dart';
 import 'package:Iraq/features/exam/models/mcq.dart';
 import 'package:Iraq/features/exam/screens/results/results.dart';
 import 'package:get/get.dart';
@@ -14,17 +15,22 @@ class ExamController extends GetxController{
   final questions = <MCQ>[].obs;
   final wrongAnswers = [];
 
-  final numberOfQuestions = 10.obs;
-
-  void chooseNumberOfQuestions(int number){
-    numberOfQuestions.value = number;
-    print(numberOfQuestions.value);
-  }
-
   @override
   void onInit() {
     super.onInit();
-    questions.assignAll(examRepository.questions);
+    prepareQuestions();
+  }
+
+  void prepareQuestions(){
+    final List<MCQ> originalQuestions = List.from(examRepository.questions);
+    final numElements = StartExamController.instance.numberOfQuestions.value;
+    if (numElements <= originalQuestions.length){
+      originalQuestions.shuffle();
+      questions.assignAll(originalQuestions.sublist(0, numElements));
+    } else {
+      originalQuestions.shuffle();
+      questions.assignAll(originalQuestions);
+    }
   }
 
   void selectOption(int index) {
