@@ -53,6 +53,11 @@ const Map<String, String> ar = {
   "moreInfo":"المزيد من المعلومات التاريخية",
   "moreAbout":"استمتع بقراءة المزيد عن ",
 
+  // StartExam Screen
+  "startExamTitle":"هل أنت مستعد للتحدي؟ اختبر معرفتك عن العراق من خلال إجراء هذا الاختبار ذو الخيارات المتعددة!",
+  "chooseNumberOfQuestions":"اختر عدد الأسئلة بين 5 و 25.",
+  "startQuiz":"ابدأ الاختبار",
+
   // Exam Screen
   "completed":" اكتمل",
   "showResults":"عرض النتائج",

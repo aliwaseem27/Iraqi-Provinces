@@ -18,5 +18,15 @@
       "Saturn"
     ],
     "correctAnswerIndex": 1
+  },
+  {
+    "question": "Who is watching me?",
+    "options": [
+      "Mustafa",
+      "Ali",
+      "Ahmed",
+      "Hussein"
+    ],
+    "correctAnswerIndex": 2
   }
 ]

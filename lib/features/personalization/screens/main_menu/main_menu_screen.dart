@@ -1,5 +1,6 @@
 import 'package:Iraq/common/widgets/purple_background_container.dart';
 import 'package:Iraq/data/repositories/exam_repository.dart';
+import 'package:Iraq/features/exam/screens/StartExamScreen/start_exam_screen.dart';
 import 'package:Iraq/features/exam/screens/questions/questions.dart';
 import 'package:Iraq/features/infographic/screens/explore_screen.dart';
 import 'package:Iraq/common/widgets/on_hover_button.dart';
@@ -95,7 +96,7 @@ class MainMenuScreen extends StatelessWidget {
                       const SizedBox(height: MSizes.spaceBetweenSections),
                       OnHoverButton(
                         child: ElevatedButton(
-                            onPressed: () => Get.to(() => const QuestionsScreen()),
+                            onPressed: () => Get.to(() => const StartExamScreen()),
                             child: Row(
                               children: [
                                 const Icon(Icons.question_answer_outlined),
@@ -130,11 +131,6 @@ class MainMenuScreen extends StatelessWidget {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      // Text(
-                      //   "chooseALanguage".tr,
-                      //   style: Theme.of(context).textTheme.bodyMedium,
-                      // ),
-                      // const SizedBox(height: MSizes.spaceBetweenSections / 2),
                       Row(
                         children: [
                           OnHoverButton(

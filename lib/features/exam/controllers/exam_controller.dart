@@ -14,6 +14,13 @@ class ExamController extends GetxController{
   final questions = <MCQ>[].obs;
   final wrongAnswers = [];
 
+  final numberOfQuestions = 10.obs;
+
+  void chooseNumberOfQuestions(int number){
+    numberOfQuestions.value = number;
+    print(numberOfQuestions.value);
+  }
+
   @override
   void onInit() {
     super.onInit();

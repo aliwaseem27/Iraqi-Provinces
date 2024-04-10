@@ -53,6 +53,11 @@ const Map<String, String> en = {
   "moreInfo":"More Detailed Historical Info",
   "moreAbout":"Enjoy reading more about ",
 
+  // StartExam Screen
+  "startExamTitle":"Are you up for a challenge? Test your knowledge of Iraq by taking this multiple-choice quiz!",
+  "chooseNumberOfQuestions":"Select a number of questions ranging from 5 to 25.",
+  "startQuiz":"Start Quiz",
+
   // Exam Screen
   "completed":" Completed",
   "showResults":"Show Results",
