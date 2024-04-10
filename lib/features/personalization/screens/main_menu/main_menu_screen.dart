@@ -1,3 +1,4 @@
+import 'package:Iraq/common/widgets/purple_background_container.dart';
 import 'package:Iraq/data/repositories/exam_repository.dart';
 import 'package:Iraq/features/exam/screens/questions/questions.dart';
 import 'package:Iraq/features/infographic/screens/explore_screen.dart';
@@ -33,63 +34,25 @@ class MainMenuScreen extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10),
-                      gradient: const LinearGradient(
-                        begin: Alignment.bottomLeft,
-                        end: Alignment.topRight,
-                        colors: [
-                          Color.fromRGBO(110, 143, 248, 1),
-                          Color.fromRGBO(101, 107, 245, 1),
-                        ],
-                      ),
-                    ),
-                    child: Stack(
+                  PurpleBackgroundContainer(
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Positioned(
-                          left: -50,
-                          bottom: -180,
-                          child: Container(
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                              gradient: LinearGradient(
-                                begin: Alignment.centerLeft,
-                                end: Alignment.centerRight,
-                                colors: [
-                                  Colors.white.withOpacity(0.05),
-                                  Colors.white.withOpacity(0.2),
-                                ],
-                              ),
-                            ),
-                            width: 300,
-                            height: 300,
-                          ),
-                        ),
-                        Container(
-                          padding: const EdgeInsets.all(MSizes.spaceBetweenSections),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              // Title
-                              Text("mainPageTitle".tr,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .headlineLarge
-                                      ?.copyWith(color: Colors.white, fontWeight: FontWeight.w800)),
-                              const SizedBox(height: MSizes.spaceBetweenSections),
+                        // Title
+                        Text("mainPageTitle".tr,
+                            style: Theme.of(context)
+                                .textTheme
+                                .headlineLarge
+                                ?.copyWith(color: Colors.white, fontWeight: FontWeight.w800)),
+                        const SizedBox(height: MSizes.spaceBetweenSections),
 
-                              // SubTitle
-                              Text("mainPageSubtitle".tr,
-                                  style: Theme.of(context)
-                                      .textTheme
-                                      .titleLarge
-                                      ?.copyWith(color: Colors.white, fontWeight: FontWeight.w400)),
-                              const SizedBox(height: MSizes.spaceBetweenSections),
-                            ],
-                          ),
-                        ),
+                        // SubTitle
+                        Text("mainPageSubtitle".tr,
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(color: Colors.white, fontWeight: FontWeight.w400)),
+                        const SizedBox(height: MSizes.spaceBetweenSections),
                       ],
                     ),
                   ),
