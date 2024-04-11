@@ -53,6 +53,12 @@ const Map<String, String> ar = {
   "moreInfo":"المزيد من المعلومات التاريخية",
   "moreAbout":"استمتع بقراءة المزيد عن ",
 
+  // Explore Screen
+  "exploreMapsTitle":"تصفح مختلف الخرائط العراقية",
+  "terrain":"التضاريس",
+  "rivers":"الانهار",
+  "culturalSites":"المواقع التاريخية",
+
   // StartExam Screen
   "startExamTitle":"هل أنت مستعد للتحدي؟ اختبر معرفتك عن العراق من خلال إجراء هذا الاختبار ذو الخيارات المتعددة!",
   "chooseNumberOfQuestions":"اختر عدد الأسئلة بين 5 و 25",

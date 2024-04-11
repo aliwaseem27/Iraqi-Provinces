@@ -50,7 +50,7 @@ class HistoricalInfoScreen extends StatelessWidget {
               Expanded(
                 child: Column(
                   children: [
-                    Image.asset(MImages.historical_baghdad),
+                    Image.asset(MImages.historicalBaghdad),
                   ],
                 ),
               ),

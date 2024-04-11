@@ -53,6 +53,12 @@ const Map<String, String> en = {
   "moreInfo":"More Detailed Historical Info",
   "moreAbout":"Enjoy reading more about ",
 
+  // Explore Screen
+  "exploreMapsTitle":"Explore Different Iraqi Maps",
+  "terrain":"Terrain",
+  "rivers":"Rivers",
+  "culturalSites":"Cultural Sites",
+
   // StartExam Screen
   "startExamTitle":"Are you up for a challenge? Test your knowledge of Iraq by taking this multiple-choice quiz!",
   "chooseNumberOfQuestions":"Select a number of questions ranging from 5 to 25",
