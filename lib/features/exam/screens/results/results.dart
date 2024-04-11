@@ -1,10 +1,8 @@
+import 'package:Iraq/common/widgets/purple_background_container.dart';
 import 'package:Iraq/features/exam/controllers/exam_controller.dart';
 import 'package:Iraq/features/personalization/screens/main_menu/main_menu_screen.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/rendering.dart';
-import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class ResultsScreen extends StatelessWidget {
@@ -45,47 +43,47 @@ class ResultsScreen extends StatelessWidget {
             ),
 
             // Incorrect Questions
-            Row(
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: [
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      "wrongAnswers".tr,
-                      style: TextStyle(decoration: TextDecoration.underline),
-                    ),
-                    SizedBox(height: MSizes.spaceBetweenSections),
-                    SizedBox(
-                      width: MediaQuery.of(context).size.width - (MSizes.defaultSize * 2 + 1),
-                      height: 300,
-                      child: SingleChildScrollView(
-                        child: ListView.builder(
-                          physics: NeverScrollableScrollPhysics(),
-                          shrinkWrap: true,
-                          itemCount: controller.wrongAnswers.length,
-                          itemBuilder: (context, index) {
-                            final wrongAnswer = controller.wrongAnswers[index];
-                            return ListTile(
-                              // tileColor: index % 2 == 0 ? Colors.grey.shade100 : Colors.white,
-                              title: Text(
-                                controller.questions[wrongAnswer].question,
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ),
-                              subtitle: Text(
-                                controller.questions[wrongAnswer]
-                                    .options[controller.questions[wrongAnswer].correctAnswerIndex],
-                                style: TextStyle(color: Colors.green),
-                              ),
-                            );
-                          },
+            if (controller.wrongAnswers.length > 0)
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        "wrongAnswers".tr,
+                      ),
+                      SizedBox(height: MSizes.spaceBetweenSections),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width - (MSizes.defaultSize * 2 + 1),
+                        height: 300,
+                        child: SingleChildScrollView(
+                          child: ListView.builder(
+                            physics: NeverScrollableScrollPhysics(),
+                            shrinkWrap: true,
+                            itemCount: controller.wrongAnswers.length,
+                            itemBuilder: (context, index) {
+                              final wrongAnswer = controller.wrongAnswers[index];
+                              return ListTile(
+                                // tileColor: index % 2 == 0 ? Colors.grey.shade100 : Colors.white,
+                                title: Text(
+                                  controller.questions[wrongAnswer].question,
+                                  style: TextStyle(fontWeight: FontWeight.bold),
+                                ),
+                                subtitle: Text(
+                                  controller.questions[wrongAnswer]
+                                      .options[controller.questions[wrongAnswer].correctAnswerIndex],
+                                  style: TextStyle(color: Colors.green),
+                                ),
+                              );
+                            },
+                          ),
                         ),
                       ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+                    ],
+                  ),
+                ],
+              ),
 
             // Finish Button
             Column(
@@ -107,18 +105,3 @@ class ResultsScreen extends StatelessWidget {
     );
   }
 }
-
-//Row(
-//                               children: [
-//                                 Text(
-//                                   controller.questions[wrongAnswer].question,
-//                                   style: TextStyle(fontWeight: FontWeight.bold),
-//                                 ),
-//                                 SizedBox(width: MSizes.spaceBetweenSections),
-//                                 Text(
-//                                   controller.questions[wrongAnswer]
-//                                       .options[controller.questions[wrongAnswer].correctAnswerIndex],
-//                                   style: TextStyle(color: Colors.green),
-//                                 ),
-//                               ],
-//                             )

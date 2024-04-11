@@ -66,20 +66,15 @@ class QuestionsScreen extends StatelessWidget {
             Obx(
               () => Column(
                 children: List.generate(controller.getCurrentOptions().length, (index) {
-                  return InkWell(
-                    onTap: () {},
-                    child: ListTile(
-                      title: Text(controller.getCurrentOptions()[index]),
-                      leading: Radio(
-                        value: index,
-                        groupValue: controller.selectedOptionIndex.value,
-                        onChanged: (int? value) {
-                          if (value != null) {
-                            controller.selectOption(value);
-                          }
-                        },
-                      ),
-                    ),
+                  return RadioListTile(
+                    title: Text(controller.getCurrentOptions()[index]),
+                    value: index,
+                    groupValue: controller.selectedOptionIndex.value,
+                    onChanged: (int? value) {
+                      if (value != null) {
+                        controller.selectOption(value);
+                      }
+                    },
                   );
                 }),
               ),
