@@ -1,7 +1,10 @@
 import 'package:Iraq/features/exam/controllers/exam_controller.dart';
 import 'package:Iraq/features/personalization/screens/main_menu/main_menu_screen.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/rendering.dart';
+import 'package:flutter/widgets.dart';
 import 'package:get/get.dart';
 
 class ResultsScreen extends StatelessWidget {
@@ -11,9 +14,9 @@ class ResultsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = ExamController.instance;
     return Scaffold(
-      appBar: AppBar(
-        title: const Text("Your Results"),
-      ),
+      // appBar: AppBar(
+      //   title: Text("quizResults".tr),
+      // ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
         child: Column(
@@ -22,34 +25,62 @@ class ResultsScreen extends StatelessWidget {
             // Score tag
             Column(
               children: [
-                Text("Your Score", style: Theme.of(context).textTheme.displayLarge),
+                Text("yourScore".tr, style: Theme.of(context).textTheme.displaySmall),
                 const SizedBox(height: MSizes.spaceBetweenSections),
-                CircleAvatar(
-                  radius: 64,
-                  backgroundColor: Colors.teal,
-                  child: Text("${controller.score/controller.questions.length * 100}%", style: Theme.of(context).textTheme.displaySmall),
+                Container(
+                  padding: EdgeInsets.all(MSizes.spaceBetweenSections),
+                  decoration: BoxDecoration(
+                    border: Border.all(color: const Color.fromRGBO(101, 107, 245, 1), width: 10),
+                    borderRadius: BorderRadius.circular(20),
+                  ),
+                  child: Text(
+                    "${(controller.score / controller.questions.length * 100).toInt()}%",
+                    style: Theme.of(context).textTheme.displayLarge?.copyWith(
+                          color: const Color.fromRGBO(101, 107, 245, 1),
+                          fontWeight: FontWeight.bold,
+                        ),
+                  ),
                 ),
               ],
             ),
 
             // Incorrect Questions
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.start,
               children: [
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "You didn't get the following questions right:",
+                      "wrongAnswers".tr,
                       style: TextStyle(decoration: TextDecoration.underline),
                     ),
-                    Text(
-                      "Q/ Which province is the most producer of oil?",
-                      style: TextStyle(fontWeight: FontWeight.bold),
-                    ),
-                    Text(
-                      "Answer/ Basra",
-                      style: TextStyle(color: Colors.green),
+                    SizedBox(height: MSizes.spaceBetweenSections),
+                    SizedBox(
+                      width: MediaQuery.of(context).size.width - (MSizes.defaultSize * 2 + 1),
+                      height: 300,
+                      child: SingleChildScrollView(
+                        child: ListView.builder(
+                          physics: NeverScrollableScrollPhysics(),
+                          shrinkWrap: true,
+                          itemCount: controller.wrongAnswers.length,
+                          itemBuilder: (context, index) {
+                            final wrongAnswer = controller.wrongAnswers[index];
+                            return ListTile(
+                              // tileColor: index % 2 == 0 ? Colors.grey.shade100 : Colors.white,
+                              title: Text(
+                                controller.questions[wrongAnswer].question,
+                                style: TextStyle(fontWeight: FontWeight.bold),
+                              ),
+                              subtitle: Text(
+                                controller.questions[wrongAnswer]
+                                    .options[controller.questions[wrongAnswer].correctAnswerIndex],
+                                style: TextStyle(color: Colors.green),
+                              ),
+                            );
+                          },
+                        ),
+                      ),
                     ),
                   ],
                 ),
@@ -64,7 +95,7 @@ class ResultsScreen extends StatelessWidget {
                   children: [
                     ElevatedButton(
                       onPressed: () => Get.offAll(() => const MainMenuScreen()),
-                      child: const Text("Finish"),
+                      child: Text("finish".tr),
                     ),
                   ],
                 ),
@@ -76,3 +107,18 @@ class ResultsScreen extends StatelessWidget {
     );
   }
 }
+
+//Row(
+//                               children: [
+//                                 Text(
+//                                   controller.questions[wrongAnswer].question,
+//                                   style: TextStyle(fontWeight: FontWeight.bold),
+//                                 ),
+//                                 SizedBox(width: MSizes.spaceBetweenSections),
+//                                 Text(
+//                                   controller.questions[wrongAnswer]
+//                                       .options[controller.questions[wrongAnswer].correctAnswerIndex],
+//                                   style: TextStyle(color: Colors.green),
+//                                 ),
+//                               ],
+//                             )

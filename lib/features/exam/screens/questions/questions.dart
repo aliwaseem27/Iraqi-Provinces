@@ -98,7 +98,7 @@ class QuestionsScreen extends StatelessWidget {
                         } else {
                           // Show results or reset the quiz
                           controller.increaseScore();
-                          Get.offAll(() => const ResultsScreen());
+                          Get.to(() => const ResultsScreen());
                         }
                       },
                       child: Obx(() => Text(controller.isQuizCompleted() ? "showResults".tr : "next".tr)),

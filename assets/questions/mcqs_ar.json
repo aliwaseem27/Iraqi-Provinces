@@ -18,5 +18,25 @@
       "زحل"
     ],
     "correctAnswerIndex": 1
+  },
+  {
+    "question": "ما هي عاصمة فرنسا؟",
+    "options": [
+      "باريس",
+      "لندن",
+      "برلين",
+      "مدريد"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "ما هي عاصمة فرنسا؟",
+    "options": [
+      "باريس",
+      "لندن",
+      "برلين",
+      "مدريد"
+    ],
+    "correctAnswerIndex": 0
   }
 ]

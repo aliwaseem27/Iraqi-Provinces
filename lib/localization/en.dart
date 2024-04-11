@@ -68,4 +68,10 @@ const Map<String, String> en = {
   "completed":" Completed",
   "showResults":"Show Results",
   "next":"Next",
+
+  // Results Screen
+  "quizResults":"Quiz Results",
+  "yourScore":"You Scored",
+  "wrongAnswers":"You didn't get the following questions right:",
+  "finish":"Finish",
 };

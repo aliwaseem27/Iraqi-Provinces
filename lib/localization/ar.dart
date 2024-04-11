@@ -68,4 +68,10 @@ const Map<String, String> ar = {
   "completed":" اكتمل",
   "showResults":"عرض النتائج",
   "next":"التالي",
+
+  // Results Screen
+  "quizResults":"نتيجة الاختبار",
+  "yourScore":"لقد سجلت علامة",
+  "wrongAnswers":"لم تجب على الاسئلة التالية بصورة صحيحة:",
+  "finish":"انهاء الاختبار",
 };

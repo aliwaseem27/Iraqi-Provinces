@@ -13,7 +13,7 @@ class ExamController extends GetxController{
   final selectedOptionIndex = (-1).obs;
   final score = 0.obs;
   final questions = <MCQ>[].obs;
-  final wrongAnswers = [];
+  final wrongAnswers = <int>[].obs;
 
   @override
   void onInit() {

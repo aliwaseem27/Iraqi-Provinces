@@ -1,7 +1,6 @@
 import 'package:Iraq/common/widgets/purple_background_container.dart';
 import 'package:Iraq/data/repositories/exam_repository.dart';
 import 'package:Iraq/features/exam/screens/StartExamScreen/start_exam_screen.dart';
-import 'package:Iraq/features/exam/screens/questions/questions.dart';
 import 'package:Iraq/features/infographic/screens/explore_screen.dart';
 import 'package:Iraq/common/widgets/on_hover_button.dart';
 import 'package:Iraq/features/personalization/screens/about_us/about_us.dart';
@@ -144,11 +143,12 @@ class MainMenuScreen extends StatelessWidget {
                           const SizedBox(width: MSizes.spaceBetweenSections),
                           OnHoverButton(
                             child: ElevatedButton(
-                                onPressed: () => languageController.chooseArabic(),
-                                child: const Text(
-                                  "العربية",
-                                  style: TextStyle(color: Colors.black),
-                                )),
+                              onPressed: () => languageController.chooseArabic(),
+                              child: const Text(
+                                "العربية",
+                                style: TextStyle(color: Colors.black),
+                              ),
+                            ),
                           ),
                         ],
                       )
