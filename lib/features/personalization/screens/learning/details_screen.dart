@@ -121,7 +121,7 @@ class DetailsScreen extends StatelessWidget {
                     Text("Interesting Fact:".tr, style: Theme.of(context).textTheme.titleLarge),
                     Obx(
                       () => Text(
-                        controller.selectedProvince.value.interestingFact,
+                        controller.selectedProvince.value.interestingFact.tr,
                         style: Theme.of(context).textTheme.bodyLarge,
                       ),
                     ),
