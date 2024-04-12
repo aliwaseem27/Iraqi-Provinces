@@ -34,6 +34,7 @@ flutter:
     - assets/articles/ar/
     - assets/articles/en/
     - assets/questions/
+    - assets/images/photos_provinces/
 
   fonts:
     - family: NotoKufiArabic

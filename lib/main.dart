@@ -9,6 +9,6 @@ void main() {
     final win = appWindow;
     win.minSize = const Size(900, 700);
     win.alignment = Alignment.center;
-    appWindow.title = "School Project";
+    appWindow.title = "Iraqi Provinces";
   });
 }

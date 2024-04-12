@@ -1,5 +1,6 @@
 import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/localization/language_controller.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get.dart';
 
@@ -15,5 +16,13 @@ class HistoricalInfoController extends GetxController{
     } else {
       return await rootBundle.loadString('assets/articles/en/${mapController.selectedProvince.value.name}.md');
     }
+  }
+
+  String getFirstProvinceImage() {
+    return "assets/images/photos_provinces/${mapController.selectedProvince.value.name}1.jpg";
+  }
+
+  String getSecondProvinceImage() {
+    return "assets/images/photos_provinces/${mapController.selectedProvince.value.name}2.jpg";
   }
 }

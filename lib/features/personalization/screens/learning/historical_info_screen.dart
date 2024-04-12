@@ -22,6 +22,7 @@ class HistoricalInfoScreen extends StatelessWidget {
           child: Row(
             children: [
               Expanded(
+                flex: 2,
                 child: Column(
                   children: [
                     SizedBox(
@@ -49,8 +50,33 @@ class HistoricalInfoScreen extends StatelessWidget {
               const SizedBox(width: MSizes.spaceBetweenSections),
               Expanded(
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                    Image.asset(MImages.historicalBaghdad),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: const Color.fromRGBO(101, 107, 245, 1), width: 5),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(14),
+                        child: Image.asset(
+                          controller.getFirstProvinceImage(),
+                        ),
+                      ),
+                    ),
+                    SizedBox(height: MSizes.spaceBetweenSections),
+                    Container(
+                      decoration: BoxDecoration(
+                        border: Border.all(color: const Color.fromRGBO(101, 107, 245, 1), width: 5),
+                        borderRadius: BorderRadius.circular(20),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(14),
+                        child: Image.asset(
+                          controller.getSecondProvinceImage(),
+                        ),
+                      ),
+                    ),
                   ],
                 ),
               ),
