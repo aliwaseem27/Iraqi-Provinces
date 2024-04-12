@@ -1,5 +1,6 @@
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class AboutUsScreen extends StatelessWidget {
   const AboutUsScreen({super.key});
@@ -8,29 +9,35 @@ class AboutUsScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("About Us"),
+        title: Text("aboutUs".tr),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        child: Row(
           children: [
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                Text("This app is made for", style: Theme.of(context).textTheme.displaySmall),
-                Text("Iraqi Ministry of Education",style: Theme.of(context).textTheme.displayLarge),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("madeFor".tr, style: Theme.of(context).textTheme.titleLarge),
+                    Text("iraqi_ministry".tr, style: Theme.of(context).textTheme.displayLarge),
+                    Text("karbala_education".tr, style: Theme.of(context).textTheme.displayMedium),
+                    Text("baghdad_high_school".tr, style: Theme.of(context).textTheme.displaySmall),
+                  ],
+                ),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text("by".tr, style: Theme.of(context).textTheme.titleMedium),
+                    Text("faten".tr, style: Theme.of(context).textTheme.titleLarge),
+                    Text("saja".tr, style: Theme.of(context).textTheme.titleLarge),
+                  ],
+                )
               ],
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text("By Baghdad High School",style: Theme.of(context).textTheme.titleLarge),
-                Text("Teacher Faten Salah Abd",style: Theme.of(context).textTheme.titleLarge),
-                Text("Teacher Huda Hussein",style: Theme.of(context).textTheme.titleLarge),
-              ],
-            )
           ],
         ),
       ),

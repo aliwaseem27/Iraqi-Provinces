@@ -65,6 +65,7 @@ const Map<String, String> ar = {
   "startQuiz":"ابدأ الاختبار",
 
   // Exam Screen
+  "chooseTheCorrectAnswer":"اختر الاجابة الصحيحة",
   "completed":" اكتمل",
   "showResults":"عرض النتائج",
   "next":"التالي",
@@ -74,4 +75,13 @@ const Map<String, String> ar = {
   "yourScore":"لقد سجلت علامة",
   "wrongAnswers":"لم تجب على الاسئلة التالية بصورة صحيحة:",
   "finish":"انهاء الاختبار",
+
+  // About Screen
+  "madeFor": "تم تصميم هذا التطبيق لـ",
+  "iraqi_ministry": "وزارة التربية العراقية",
+"karbala_education":"مديرية تربية كربلاء المقدسة",
+  "baghdad_high_school": "مدرسة بغداد الثانوية للبنات",
+  "by": "بواسطة",
+  "faten": "فاتن صلاح عبد",
+  "saja": "سجى جابر أحمد",
 };

@@ -12,7 +12,7 @@ class QuestionsScreen extends StatelessWidget {
     final controller = Get.put(ExamController());
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Choose the correct answer"),
+        title:  Text("chooseTheCorrectAnswer".tr),
       ),
       body: Container(
         padding: const EdgeInsets.all(MSizes.defaultSize),
