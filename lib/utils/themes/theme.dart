@@ -8,5 +8,6 @@ class MAppTheme {
 
   static ThemeData lightTheme = ThemeData(
     elevatedButtonTheme: MElevatedButtonTheme.lightElevatedButtonTheme,
+    fontFamily: "NotoKufiArabic",
   );
 }

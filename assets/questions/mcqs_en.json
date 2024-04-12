@@ -1,272 +1,342 @@
 [
   {
-    "question": "What is the capital of France?",
+    "question": "What is the capital of Al-Anbar province?",
     "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Ramadi",
+      "Karbala",
+      "Mosul",
+      "Baghdad"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "Which province is home to the ancient city of Babylon?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
+      "Diyala",
+      "Wasit",
+      "Najaf",
+      "Babil"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "Which province is famous for its marshlands?",
+    "options": [
+      "Najaf",
+      "Maysan",
+      "Karbala",
+      "Al-Qadisiyyah"
     ],
     "correctAnswerIndex": 1
   },
   {
-    "question": "Who is watching me?",
+    "question": "What is the capital of Dhi Qar province?",
     "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
-    ],
-    "correctAnswerIndex": 2
-  },
-  {
-    "question": "What is the capital of France?",
-    "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Nasiriyah",
+      "Kirkuk",
+      "Hilla",
+      "Tikrit"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "Which province is known for its rich oil reserves?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
-    ],
-    "correctAnswerIndex": 1
-  },
-  {
-    "question": "Who is watching me?",
-    "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
+      "Diyala",
+      "Sulaymaniyah",
+      "Kirkuk",
+      "Dohuk"
     ],
     "correctAnswerIndex": 2
   },
   {
-    "question": "What is the capital of France?",
+    "question": "What is the capital of Kirkuk province?",
     "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Kirkuk",
+      "Tikrit",
+      "Mosul",
+      "Erbil"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "Which province is located in the Kurdistan Region?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
-    ],
-    "correctAnswerIndex": 1
-  },
-  {
-    "question": "Who is watching me?",
-    "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
+      "Babil",
+      "Basra",
+      "Dohuk",
+      "Muthanna"
     ],
     "correctAnswerIndex": 2
   },
   {
-    "question": "What is the capital of France?",
+    "question": "What is the capital of Salah ad-Din province?",
     "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Tikrit",
+      "Najaf",
+      "Nasiriyah",
+      "Karbala"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "What is the capital of Najaf province?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
-    ],
-    "correctAnswerIndex": 1
-  },
-  {
-    "question": "Who is watching me?",
-    "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
-    ],
-    "correctAnswerIndex": 2
-  },
-  {
-    "question": "What is the capital of France?",
-    "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Najaf",
+      "Karbala",
+      "Baghdad",
+      "Basra"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "Which province is situated along the Tigris River?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
-    ],
-    "correctAnswerIndex": 1
-  },
-  {
-    "question": "Who is watching me?",
-    "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
+      "Dohuk",
+      "Erbil",
+      "Diyala",
+      "Al-Qadisiyyah"
     ],
     "correctAnswerIndex": 2
   },
   {
-    "question": "What is the capital of France?",
+    "question": "What is the capital of Muthanna province?",
     "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Samawah",
+      "Karbala",
+      "Nasiriyah",
+      "Maysan"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "Which province is home to the ancient city of Ur?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
-    ],
-    "correctAnswerIndex": 1
-  },
-  {
-    "question": "Who is watching me?",
-    "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
+      "Wasit",
+      "Muthanna",
+      "Dhi Qar",
+      "Basra"
     ],
     "correctAnswerIndex": 2
   },
   {
-    "question": "What is the capital of France?",
+    "question": "Which province is located in the southernmost part of Iraq?",
     "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Diyala",
+      "Al-Qadisiyyah",
+      "Basra",
+      "Nineveh"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "What is the capital of Wasit province?",
+    "options": [
+      "Karbala",
+      "Kut",
+      "Najaf",
+      "Dohuk"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "What is the capital of Maysan province?",
+    "options": [
+      "Basra",
+      "Amarah",
+      "Nasiriyah",
+      "Baghdad"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "Which province shares its borders with Iran?",
+    "options": [
+      "Dohuk",
+      "Erbil",
+      "Dhi Qar",
+      "Sulaymaniyah"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "Which province is known for its diverse ethnic and religious communities?",
+    "options": [
+      "Karbala",
+      "Kirkuk",
+      "Diyala",
+      "Al-Qadisiyyah"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "What is the capital of Ninawa province?",
+    "options": [
+      "Kirkuk",
+      "Tikrit",
+      "Mosul",
+      "Erbil"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "Which province is home to the ancient city of Ashur?",
+    "options": [
+      "Al-Anbar",
+      "Salah ad-Din",
+      "Diyala",
+      "Ninawa"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "What is the capital of Diyala province?",
+    "options": [
+      "Tikrit",
+      "Karbala",
+      "Baghdad",
+      "Ba'qubah"
+    ],
+    "correctAnswerIndex": 3
+  },
+  {
+    "question": "Which province is located in the western part of Iraq?",
+    "options": [
+      "Erbil",
+      "Al-Anbar",
+      "Dohuk",
+      "Sulaymaniyah"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "Which province is known for its date palm orchards?",
+    "options": [
+      "Diyala",
+      "Basra",
+      "Muthanna",
+      "Najaf"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "What is the capital of Al-Qadisiyyah province?",
+    "options": [
+      "Najaf",
+      "Karbala",
+      "Al-Diwaniyah",
+      "Maysan"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "Which province is famous for its production of rice?",
+    "options": [
+      "Wasit",
+      "Maysan",
+      "Basra",
+      "Dhi Qar"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "What is the capital of Salah al-Din province?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
-    ],
-    "correctAnswerIndex": 1
-  },
-  {
-    "question": "Who is watching me?",
-    "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
-    ],
-    "correctAnswerIndex": 2
-  },
-  {
-    "question": "What is the capital of France?",
-    "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Tikrit",
+      "Karbala",
+      "Al-Qadisiyyah",
+      "Najaf"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "Which province is known for its ancient city of Nimrud?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
+      "Al-Anbar",
+      "Ninawa",
+      "Diyala",
+      "Salah al-Din"
     ],
     "correctAnswerIndex": 1
   },
   {
-    "question": "Who is watching me?",
+    "question": "Which province is located along the Euphrates River?",
     "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
+      "Diyala",
+      "Al-Qadisiyyah",
+      "Dhi Qar",
+      "Salah al-Din"
     ],
     "correctAnswerIndex": 2
   },
   {
-    "question": "What is the capital of France?",
+    "question": "Which province is known for its vast desert landscape?",
     "options": [
-      "Paris",
-      "London",
-      "Berlin",
-      "Madrid"
+      "Al-Anbar",
+      "Kirkuk",
+      "Erbil",
+      "Sulaymaniyah"
     ],
     "correctAnswerIndex": 0
   },
   {
-    "question": "What is the largest planet in our solar system?",
+    "question": "Which province is famous for its Ziggurat of Ur?",
     "options": [
-      "Earth",
-      "Jupiter",
-      "Mars",
-      "Saturn"
+      "Muthanna",
+      "Basra",
+      "Dhi Qar",
+      "Wasit"
+    ],
+    "correctAnswerIndex": 2
+  },
+  {
+    "question": "What is the capital of Babil province?",
+    "options": [
+      "Hilla",
+      "Karbala",
+      "Najaf",
+      "Baghdad"
+    ],
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Which province is known for its connection to the ancient Sumerian civilization?",
+    "options": [
+      "Erbil",
+      "Dhi Qar",
+      "Muthanna",
+      "Sulaymaniyah"
     ],
     "correctAnswerIndex": 1
   },
   {
-    "question": "Who is watching me?",
+    "question": "Which province is famous for its historic citadel in the city of Erbil?",
     "options": [
-      "Mustafa",
-      "Ali",
-      "Ahmed",
-      "Hussein"
+      "Erbil",
+      "Sulaymaniyah",
+      "Dohuk",
+      "Kirkuk"
     ],
-    "correctAnswerIndex": 2
+    "correctAnswerIndex": 0
+  },
+  {
+    "question": "Which province is known for its vast oil fields and refineries?",
+    "options": [
+      "Diyala",
+      "Basra",
+      "Muthanna",
+      "Dhi Qar"
+    ],
+    "correctAnswerIndex": 1
+  },
+  {
+    "question": "What is the capital of Al-Muthanna province?",
+    "options": [
+      "Samawah",
+      "Nasiriyah",
+      "Basra",
+      "Baghdad"
+    ],
+    "correctAnswerIndex": 0
   }
 ]

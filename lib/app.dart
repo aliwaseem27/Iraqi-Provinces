@@ -14,7 +14,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final controller = Get.put(LanguageController());
     return GetMaterialApp(
-      title: "School Project",
+      title: "Iraqi Provinces",
       home: const MainMenuScreen(),
       theme: MAppTheme.lightTheme,
       scrollBehavior: CustomScrollBehavior(),
