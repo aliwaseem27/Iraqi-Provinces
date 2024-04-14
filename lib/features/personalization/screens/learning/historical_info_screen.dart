@@ -1,6 +1,5 @@
 import 'package:Iraq/features/map/controllers/map_controller.dart';
 import 'package:Iraq/features/personalization/controllers/historical_info_controller.dart';
-import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_markdown/flutter_markdown.dart';
@@ -64,7 +63,7 @@ class HistoricalInfoScreen extends StatelessWidget {
                         ),
                       ),
                     ),
-                    SizedBox(height: MSizes.spaceBetweenSections),
+                    const SizedBox(height: MSizes.spaceBetweenSections),
                     Container(
                       decoration: BoxDecoration(
                         border: Border.all(color: const Color.fromRGBO(101, 107, 245, 1), width: 5),

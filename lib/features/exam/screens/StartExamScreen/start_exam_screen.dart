@@ -1,12 +1,9 @@
 import 'package:Iraq/common/widgets/purple_background_container.dart';
-import 'package:Iraq/data/repositories/exam_repository.dart';
-import 'package:Iraq/features/exam/controllers/exam_controller.dart';
 import 'package:Iraq/features/exam/controllers/start_exam_controller.dart';
 import 'package:Iraq/features/exam/screens/questions/questions.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 import 'package:numberpicker/numberpicker.dart';
 
 class StartExamScreen extends StatelessWidget {

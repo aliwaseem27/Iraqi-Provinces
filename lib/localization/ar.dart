@@ -80,7 +80,7 @@ const Map<String, String> ar = {
   "madeFor": "تم تصميم هذا التطبيق لـ",
   "iraqi_ministry": "وزارة التربية العراقية",
   "karbala_education": "مديرية تربية كربلاء المقدسة",
-  "baghdad_high_school": "مدرسة بغداد الثانوية للبنات",
+  "baghdad_high_school": "اعدادية بغداد للبنات",
   "by": "بواسطة",
   "faten": "فاتن صلاح عبد",
   "saja": "سجى جابر أحمد",

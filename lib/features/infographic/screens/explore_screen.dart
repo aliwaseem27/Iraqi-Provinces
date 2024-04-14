@@ -1,7 +1,6 @@
 import 'package:Iraq/utils/constants/image_strings.dart';
 import 'package:Iraq/utils/constants/sizes.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 class ExploreScreen extends StatefulWidget {
@@ -62,7 +61,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 SizedBox(
-                  width: 170,
+                  width: 200,
                   child: ElevatedButton(
                     onPressed: () => _onButtonPressed(0),
                     style: ElevatedButton.styleFrom(
@@ -77,7 +76,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 ),
                 const SizedBox(width: MSizes.spaceBetweenSections),
                 SizedBox(
-                  width: 170,
+                  width: 200,
                   child: ElevatedButton(
                     onPressed: () => _onButtonPressed(1),
                     style: ElevatedButton.styleFrom(
@@ -92,7 +91,7 @@ class _ExploreScreenState extends State<ExploreScreen> {
                 ),
                 const SizedBox(width: MSizes.spaceBetweenSections),
                 SizedBox(
-                  width: 170,
+                  width: 200,
                   child: ElevatedButton(
                     onPressed: () => _onButtonPressed(2),
                     style: ElevatedButton.styleFrom(
