@@ -1,16 +1,14 @@
-# windows_test
+# Iraqi Provinces
+Interactive Map for enjoyable learning experience.
 
-A new Flutter project.
+## Requirements
+This is a Flutter app design and programmed to work on Windows & MacOS machines.
 
-## Getting Started
+## Usage
+A learning tool for Elementary School Students to learn more about the geography of Iraq.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Featured Techniques Used in the App
+- Reading SVG Images => Parsing them as XML documents => Extracting the attributes (especially: path string) => Drawing provinces using ClipPath => Drawing borders using CustomPaint.
+- Animating page transitions, hero widgets, and OnHoverEffects.
+- Responsive Design.
+- State Management using Getx.
