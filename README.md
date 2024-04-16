@@ -2,7 +2,7 @@
 Interactive Map for enjoyable learning experience.
 
 ## Requirements
-This is a Flutter app design and programmed to work on Windows & MacOS machines.
+This is a Flutter app designed and programmed to work on Windows & MacOS machines.
 
 ## Usage
 A learning tool for Elementary School Students to learn more about the geography of Iraq.
