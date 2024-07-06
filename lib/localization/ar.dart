@@ -85,6 +85,14 @@ const Map<String, String> ar = {
   "faten": "فاتن صلاح عبد",
   "saja": "سجى جابر أحمد",
 
+  // My about screen
+  "madeBy": "قام بتصميم هذا التطبيق",
+  "my_name":"علي وسيم محمد",
+  "job_title": "مطور تطبيقات الموبايل",
+  "contact_me": "تواصل معي من خلال",
+  "email_address": "ali.waseem27@gmail.com",
+  "linkedin_link": "https://www.linkedin.com/in/aliwaseem27/",
+
   // InterestingFacts
   "baghdadInterestingFact": "عاصمة العراق ومحافظة بغداد لها تاريخ غني يعود إلى القرن الثامن وكانت مرة واحدة واحدة من أكبر المدن في العالم خلال العصر الذهبي الإسلامي.",
   "duhokInterestingFact": "مدينة دهوك مشهورة بمناظرها الطبيعية الجميلة، بما في ذلك الجبال، وهي وجهة شهيرة للسياح.",

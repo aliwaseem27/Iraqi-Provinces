@@ -85,6 +85,15 @@ const Map<String, String> en = {
   "faten":"Faten Salah Abid",
   "saja":"Saja Jabir Ahmed",
 
+  // My about screen
+  "madeBy":"This app is made by",
+  "my_name":"Ali Waseem Mohammed",
+  "job_title": "Mobile App Developer",
+  "contact_me": "Contact Me at:",
+  "email_address": "ali.waseem27@gmail.com",
+  "linkedin_link": "https://www.linkedin.com/in/aliwaseem27/",
+
+
   // InterestingFacts
   "baghdadInterestingFact":"The capital city and province of Iraq, Baghdad has a rich history dating back to the 8th century and was once one of the largest cities in the world during the Islamic Golden Age.",
   "duhokInterestingFact":"Dohuk is known for its beautiful landscapes, including mountains, and is a popular destination for tourists.",
